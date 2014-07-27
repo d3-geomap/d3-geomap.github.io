@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
 <channel><title>Maps » Choropleth</title>
-    <link>http://localhost:8080</link>
+    <link>http://d3-geomap.github.io</link>
     <description>maps/choropleth</description>
-    <lastBuildDate>Thu, 24 Jul 2014 01:57:02 </lastBuildDate>
+    <lastBuildDate>Sun, 27 Jul 2014 23:14:07 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
         <title>Choropleth US States • d3.geomap</title>
-        <link>http://localhost:8080/maps/choropleth/us-states/</link>
+        <link>http://d3-geomap.github.io/maps/choropleth/us-states/</link>
         <description></description>
-        <guid>http://localhost:8080/maps/choropleth/us-states/</guid>
+        <guid>http://d3-geomap.github.io/maps/choropleth/us-states/</guid>
         <pubDate>Wed, 23 Jul 2014 23:55:22 </pubDate>
     </item>
     
     <item>
         <title>Choropleth World Map • d3.geomap</title>
-        <link>http://localhost:8080/maps/choropleth/world/</link>
+        <link>http://d3-geomap.github.io/maps/choropleth/world/</link>
         <description></description>
-        <guid>http://localhost:8080/maps/choropleth/world/</guid>
+        <guid>http://d3-geomap.github.io/maps/choropleth/world/</guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
     </item>
     
