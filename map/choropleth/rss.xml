@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
-<channel><title>__Index__</title>
+<channel><title>Map » Choropleth</title>
     <link>http://d3-geomap.github.io</link>
-    <description>__index__</description>
+    <description>map/choropleth</description>
     <lastBuildDate>Mon, 28 Jul 2014 13:03:35 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
@@ -21,14 +21,6 @@
         <description></description>
         <guid>http://d3-geomap.github.io/map/choropleth/world/</guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
-    </item>
-    
-    <item>
-        <title>d3.geomap - Create Geographic Maps for the Web</title>
-        <link>http://d3-geomap.github.io/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/</guid>
-        <pubDate>Wed, 23 Jul 2014 19:53:22 </pubDate>
     </item>
     
 </channel></rss>
