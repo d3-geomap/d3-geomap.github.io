@@ -77,7 +77,10 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <h1>Choropleth Map: US States</h1>
-        <div><p>JavaScript code for creating a Choropleth map for states in the US.</p>
+        <div><p>This example shows how to create a choropleth map of states in the US using data from the <a href="http://www.nsf.gov/statistics/seind14/index.cfm/state-data/download.htm">National Science Foundation</a> about venture capital spent in the US in 2012.</p>
+<p>I'll only explain the differences to the example <a href="/map/choropleth/world/">choropleth map of the world</a>, where you can learn about the meaning of the other settings.</p>
+<p>Since this is a map of the US, we load the appropriate topojson file and set the map object to use the <code>d3.geo.albersUsa</code> projection. The <code>unitId</code> used in this topojson source is the <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code">FIPS code</a>. Since we don't use the default projection (<code>d3.geo.naturalEarth</code>) we need to set the <code>scale</code> so the map fits well into the layout, in this case <code>1000</code> is a good value.</p>
+<p>The remaining code should be straight-forward, provided you read the explanation of the <a href="/map/choropleth/world/">choropleth world map example</a>.</p>
 <pre><code>var map = d3.geomap.choropleth()
     .geofile(&#39;/d3-geomap/topojson/countries/USA.json&#39;)
     .projection(d3.geo.albersUsa)
