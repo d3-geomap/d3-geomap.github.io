@@ -77,7 +77,15 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <h1>Choropleth Map: World</h1>
-        <div><p>JavaScript code for creating a Choropleth world map with d3.geomap.</p>
+        <div><p>This example shows how to create a choropleth world map with <code>d3.geomap.choropleth</code>. This example displays world population data from downloaded from the <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
+<p>You can set various properties of the map when instantiating a map object. First specify the topojson file to load, then set the color scheme, choose the <code>YR2010</code> column as the one to display, set the format according to the <code>format</code> function defined first, display a legend, and set the unitId to <code>Country Code</code>. Let's go into more details about the individual settings.</p>
+<p>d3.geomap comes with support for color schemes from the <a href="http://colorbrewer2.org/">ColorBrewer project</a>. We choose the sequential multi-hue scheme Yellow - Green - Blue appropriate for the population data displayed and for best accuracy the maximum number of bins for sequential schemes from ColorBrewer, which is 9.</p>
+<p>The value in the call to the <code>column</code> method specifies which column of the CSV file to display on the map based on the header row in the CSV. <code>d3.geomap.choropleth</code> requires this header row to be present.</p>
+<p>The <code>format</code> function defines how to format values in the map legend and in tooltips when moving the mouse over a country.</p>
+<p>The <code>legend</code> can currently be set to <code>true</code> and <code>false</code>. If <code>true</code> it will look like the one in the example. If you don't want to display a legend or prefer another type of legend you have to set <code>legend</code> to <code>false</code> and draw your own.</p>
+<p>Finally the <code>unitId</code> specifies which column in the CSV file contains the ID values of the geographic units displayed on the map. In this case the units are countries and the ID is the 3 letter <code>Country Code</code> defined in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 Alpha 3</a>. This is the same ID as used in the topojson file. If you use a different topojson file with another code, e. g. the ISO 2 code, you need to make sure to include this in the CSV and set the <code>unitId</code> accordingly.</p>
+<p>After setting up the map, we need to load the CSV file, select the div with the id <code>map</code> set the selection <code>datum</code> to the loaded CSV and call the <code>map.draw</code> method defined in d3-geomap. You have to provide the <code>map</code> object itself as the 2nd argument to <code>call</code>.</p>
+<p>See the complete JavaScript code needed to render the map below.</p>
 <pre><code>var format = function(d) {
     d = d / 1000000;
     return d3.format(&#39;,.02f&#39;)(d) + &#39;M&#39;;
@@ -98,6 +106,16 @@ d3.csv(&#39;/data/sp.pop.totl.csv&#39;, function(error, data) {
 });
 </code></pre></div>
         <div id="map"></div>
+        
+            <h3>Data</h3>
+            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3.geomap.</p>
+            <pre>﻿Series Code,Country Code,YR2004,YR2005,YR2006,YR2007,YR2008,YR2009,YR2010,YR2011,YR2012,YR2013
+SP.POP.TOTL,AFG,24018682,24860855,25631282,26349243,27032197,27708187,28397812,29105480,29824536,30551674
+SP.POP.TOTL,ALB,3014579,2992724,2968028,2940880,2912559,2884303,2856673,2829337,2801681,2773620
+SP.POP.TOTL,DZA,33461345,33960903,34507214,35097043,35725377,36383302,37062820,37762962,38481705,39208194
+SP.POP.TOTL,ASM,59262,59117,58652,57919,57053,56245,55636,55274,55128,55165
+SP.POP.TOTL,ADO,79060,81223,81877,81292,79969,78659,77907,77865,78360,79218
+...</pre>
         
         <hr>
         <h3>Example Maps</h3>
