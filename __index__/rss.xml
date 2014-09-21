@@ -3,9 +3,17 @@
 <channel><title>__Index__</title>
     <link>http://d3-geomap.github.io</link>
     <description>__index__</description>
-    <lastBuildDate>Mon, 28 Jul 2014 15:22:14 </lastBuildDate>
+    <lastBuildDate>Sun, 21 Sep 2014 12:50:30 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    
+    <item>
+        <title>World Upside Down</title>
+        <link>http://d3-geomap.github.io/map/world-upside-down/</link>
+        <description></description>
+        <guid>http://d3-geomap.github.io/map/world-upside-down/</guid>
+        <pubDate>Sun, 21 Sep 2014 12:46:22 </pubDate>
+    </item>
     
     <item>
         <title>Choropleth Map: US States</title>

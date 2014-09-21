@@ -7,7 +7,7 @@
     
     
 
-    <title>Choropleth Map: US States • d3.geomap</title>
+    <title>World Upside Down • d3.geomap</title>
 
     
 
@@ -63,12 +63,12 @@
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-share"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fchoropleth%2Fus-states%2F&text=Choropleth+Map%3A+US+States" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fchoropleth%2Fus-states%2F&t=Choropleth+Map%3A+US+States" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fchoropleth%2Fus-states%2F" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fchoropleth%2Fus-states%2F&title=Choropleth+Map%3A+US+States" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fchoropleth%2Fus-states%2F&title=Choropleth+Map%3A+US+States" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fchoropleth%2Fus-states%2F&title=Choropleth+Map%3A+US+States" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fworld-upside-down%2F&text=World+Upside+Down" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fworld-upside-down%2F&t=World+Upside+Down" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fworld-upside-down%2F" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fworld-upside-down%2F&title=World+Upside+Down" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fworld-upside-down%2F&title=World+Upside+Down" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fd3-geomap.github.io%2Fmap%2Fworld-upside-down%2F&title=World+Upside+Down" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -80,36 +80,17 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-        <h1>Choropleth Map: US States</h1>
-        <div><p>This example shows how to create a choropleth map of states in the US using data from the <a href="http://www.nsf.gov/statistics/seind14/index.cfm/state-data/download.htm">National Science Foundation</a> about venture capital spent in the US in 2012.</p>
-<p>I'll only explain the differences to the example <a href="/map/choropleth/world/">choropleth map of the world</a>, where you can learn about the meaning of the other settings.</p>
-<p>Since this is a map of the US, we load the appropriate topojson file and set the map object to use the <code>d3.geo.albersUsa</code> projection. The <code>unitId</code> used in this topojson source is the <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code">FIPS code</a>. Since we don't use the default projection (<code>d3.geo.naturalEarth</code>) we need to set the <code>scale</code> so the map fits well into the layout, in this case <code>1000</code> is a good value.</p>
-<p>The remaining code should be straight-forward, provided you read the explanation of the <a href="/map/choropleth/world/">choropleth world map example</a>.</p>
-<pre><code>var map = d3.geomap.choropleth()
-    .geofile(&#39;/d3-geomap/topojson/countries/USA.json&#39;)
-    .projection(d3.geo.albersUsa)
-    .column(&#39;2012&#39;)
-    .unitId(&#39;fips&#39;)
-    .scale(1000)
-    .legend(true);
+        <h1>World Upside Down</h1>
+        <div><p>This example shows how to create a rotated world map with <code>d3.geomap</code>.</p>
+<p>See the complete JavaScript code needed to render the map below.</p>
+<pre><code>var map = d3.geomap()
+    .geofile(&#39;/d3-geomap/topojson/world/countries.json&#39;)
+    .rotate([0, 0, 180]);
 
-d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
-    d3.select(&#39;#map&#39;)
-        .datum(data)
-        .call(map.draw, map);
-});
+d3.select(&#39;#map&#39;)
+    .call(map.draw, map);
 </code></pre></div>
         <div id="map"></div>
-        
-            <h3>Data</h3>
-            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3.geomap.</p>
-            <pre>,State,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,fips
-0,Alabama,0.77,0.59,2.3,0.67,0.46,0.23,0.27,0.13,0.12,0.19,0.14,0.26,0.0,0.02,0.13,US01
-1,Alaska,0.0,0.0,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,US02
-2,Arizona,1.51,2.14,0.21,1.16,1.11,0.39,0.51,0.06,1.1,0.78,0.8,0.44,0.34,0.89,0.83,US04
-3,Arkansas,0.11,0.39,9.15,0.15,0.13,0.01,0.04,1.39,0.42,0.0,0.0,0.0,0.05,0.0,0.05,US05
-4,California,7.14,19.14,32.61,12.46,6.87,5.86,5.95,6.52,6.99,7.88,7.51,5.06,5.95,7.92,7.08,US06
-...</pre>
         
         <hr>
         <h3>Example Maps</h3>
@@ -148,7 +129,7 @@ d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
         
             <script src="/d3-geomap/js/d3.geomap.min.js#v=1"></script>
         
-            <script src="/js/maps/choropleth/us-states.js#v=1"></script>
+            <script src="/js/maps/world-upside-down.js#v=1"></script>
         
     
   </body>

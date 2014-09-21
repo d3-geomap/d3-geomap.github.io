@@ -377,15 +377,17 @@
         },
         width: 960,
         height: 500,
+        geofile: null,
+        postUpdate: null,
         projection: d3.geo.naturalEarth,
+        rotate: [0, 0, 0],
+        svg: null,
         title: function(d) {
           return d.properties.name;
         },
-        geofile: null,
-        units: 'units',
         unitId: 'iso3',
-        svg: null,
-        postUpdate: null
+        units: 'units',
+        zoomMax: 4
       };
       this.properties.scale = this.properties.width / 5.8;
       this.properties.translate = [this.properties.width / 2, this.properties.height / 2];
@@ -408,7 +410,7 @@
         centroid = geomap.properties.path.centroid(d);
         x = centroid[0];
         y = centroid[1];
-        k = 4;
+        k = geomap.properties.zoomMax;
         geomap["private"].centered = d;
       } else {
         x = geomap.properties.width / 2;
@@ -438,7 +440,7 @@
       geomap.properties.svg = selection.append('svg').attr('width', geomap.properties.width).attr('height', geomap.properties.height);
       geomap.properties.svg.append('rect').attr('class', 'background').attr('width', geomap.properties.width).attr('height', geomap.properties.height).on('click', geomap.clicked.bind(geomap));
       geomap["private"].g = geomap.properties.svg.append('g').attr('class', 'units zoom');
-      proj = geomap.properties.projection().scale(geomap.properties.scale).translate(geomap.properties.translate).precision(.1);
+      proj = geomap.properties.projection().rotate(geomap.properties.rotate).scale(geomap.properties.scale).translate(geomap.properties.translate).precision(.1);
       geomap.properties.path = d3.geo.path().projection(proj);
       return d3.json(geomap.properties.geofile, function(error, geo) {
         geomap.selection.units = geomap["private"].g.selectAll('path').data(topojson.feature(geo, geo.objects[geomap.properties.units]).features);
