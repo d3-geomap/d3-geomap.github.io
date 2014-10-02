@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel><title>Docs</title>
+    <link>http://d3-geomap.github.io</link>
+    <description>docs</description>
+    <lastBuildDate>Thu, 02 Oct 2014 12:35:05 </lastBuildDate>
+    <generator>Logya</generator>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    
+    <item>
+        <title>Map Properties - d3.geomap Documentation</title>
+        <link>http://d3-geomap.github.io/docs/map-properties/</link>
+        <description></description>
+        <guid>http://d3-geomap.github.io/docs/map-properties/</guid>
+        <pubDate>Thu, 02 Oct 2014 12:27:22 </pubDate>
+    </item>
+    
+</channel></rss>

@@ -440,7 +440,10 @@
       geomap.properties.svg = selection.append('svg').attr('width', geomap.properties.width).attr('height', geomap.properties.height);
       geomap.properties.svg.append('rect').attr('class', 'background').attr('width', geomap.properties.width).attr('height', geomap.properties.height).on('click', geomap.clicked.bind(geomap));
       geomap["private"].g = geomap.properties.svg.append('g').attr('class', 'units zoom');
-      proj = geomap.properties.projection().rotate(geomap.properties.rotate).scale(geomap.properties.scale).translate(geomap.properties.translate).precision(.1);
+      proj = geomap.properties.projection().scale(geomap.properties.scale).translate(geomap.properties.translate).precision(.1);
+      if (proj.hasOwnProperty('rotate') && geomap.properties.rotate) {
+        proj.rotate(geomap.properties.rotate);
+      }
       geomap.properties.path = d3.geo.path().projection(proj);
       return d3.json(geomap.properties.geofile, function(error, geo) {
         geomap.selection.units = geomap["private"].g.selectAll('path').data(topojson.feature(geo, geo.objects[geomap.properties.units]).features);
@@ -493,7 +496,7 @@
     };
 
     Choropleth.prototype.update = function() {
-      var color_val, d, data_by_id, geomap, iso_val, max, min, unitId, val, _i, _len, _ref;
+      var color_val, d, data_by_id, geomap, iso_val, max, min, scaleFunc, unitId, val, _i, _len, _ref;
       geomap = this;
       data_by_id = {};
       unitId = geomap.properties.unitId;
@@ -513,7 +516,12 @@
         data_by_id[d[unitId]] = val;
       }
       geomap["private"].domain = geomap.properties.domain || [min, max];
-      geomap.colorize = d3.scale.quantize().domain(geomap["private"].domain).range(geomap.properties.colors);
+      if (geomap["private"].domain.length > 2) {
+        scaleFunc = d3.scale.threshold;
+      } else {
+        scaleFunc = d3.scale.quantize;
+      }
+      geomap.colorize = scaleFunc().domain(geomap["private"].domain).range(geomap.properties.colors);
       iso_val = function(id) {
         if (data_by_id[id] === null) {
           return 'No data';
@@ -542,7 +550,7 @@
     };
 
     Choropleth.prototype.drawLegend = function(min_val, max_val) {
-      var box_h, box_w, colorlist, domain_max, geomap, l_tr, last_idx, last_text, last_val, legend_h, lg, max_text, offset_t, offset_y, rect_h, rect_w, sg;
+      var box_h, box_w, colorlist, domain_max, domain_min, geomap, l_tr, legend_h, lg, max_text, min_text, min_val_idx, offset_t, offset_y, rect_h, rect_w, sg;
       geomap = this;
       box_w = 120;
       box_h = 240;
@@ -576,12 +584,13 @@
         max_text = '> ' + max_text;
       }
       sg.append('text').text(max_text).attr('x', rect_w + offset_t).attr('y', offset_t);
-      last_idx = colorlist.length - 1;
-      last_val = geomap.colorize.invertExtent(colorlist[last_idx])[0];
-      last_text = sg.selectAll('text.text-' + last_idx);
-      if (min_val < last_val) {
-        return last_text.text('< ' + last_val);
+      domain_min = geomap["private"].domain[0];
+      min_text = geomap.properties.format(domain_min);
+      if (min_val < domain_min) {
+        min_text = '< ' + min_text;
       }
+      min_val_idx = colorlist.length - 1;
+      return sg.selectAll('text.text-' + min_val_idx).text(min_text);
     };
 
     return Choropleth;
