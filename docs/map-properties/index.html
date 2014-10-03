@@ -87,6 +87,31 @@
         <div><h1>Map Properties</h1>
 <p>Several properties can be set after initializing a d3.geomap object to influence the map display.</p>
 <h3>General Properties</h3>
+<p>This section documents the properties that can/must be set when a d3.geomap object is created.</p>
+<h4>margin</h4>
+<p>Can be set but serves no purpose yet.</p>
+<h4>width</h4>
+<p>The width of the map defaults to 960px.</p>
+<h4>height: 500</h4>
+<p>The height of the map defaults to 500px.</p>
+<h4>geofile</h4>
+<p>The topojson file, this is required.</p>
+<h4>postUpdate</h4>
+<p>function to run when update process is completed, i. e. the map is rendered. This can be used to draw symbols or provide your on zoom function for example.</p>
+<h4>projection</h4>
+<p>The map projection to be used, defaults to d3.geo.naturalEarth. Can be selected from <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
+<h4>rotate</h4>
+<p>The rotation of the map, defaults to [0, 0, 0], i. e. the rotation you are most likely to expect.</p>
+<h4>svg</h4>
+<p>The svg property can be used to access and manipulate the map DOM element.</p>
+<h4>title</h4>
+<p>The browser tooltip displayed when the mouse is moved over a map unit, e. g. a country in case of the default world map.</p>
+<h4>unitId</h4>
+<p>A property of the unit that is unique, e. g. the <em>iso3</em> code of a country, which is also the default value.</p>
+<h4>units</h4>
+<p>The property of the topojson objects that define its form.</p>
+<h4>zoomMax</h4>
+<p>The zoom factor to use when a map unit is clicked.</p>
 <h3>Choropleth Properties</h3>
 <h4>colors</h4>
 <p>TODO</p>
