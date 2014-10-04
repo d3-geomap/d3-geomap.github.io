@@ -113,11 +113,18 @@
 <h4>zoomMax</h4>
 <p>The zoom factor to use when a map unit is clicked.</p>
 <h3>Choropleth Properties</h3>
+<p>Properties specific to d3.geomap.choropleth objects.</p>
+<h4>column</h4>
+<p>The column from the CSV file that contains the values to be displayed on the map. You provide the appropriate column heading as a string value to the column method.</p>
 <h4>colors</h4>
-<p>TODO</p>
+<p>An array of color values. You can use <a href="http://colorbrewer2.org/">color brewer</a> schemes available via the <code>colorbrewer</code> object, e. g. <code>colorbrewer.YlOrRd[9]</code> for a sequential Yellow, Orange, Red scheme with 9 different color values.</p>
 <h4>domain</h4>
 <p>The optional <code>domain</code> property allows you to specify the range of values used to colorize that map. If no <code>domain</code> is given the range will be determined from the data series.</p>
-<p>If <code>domain</code> is an array with 2 values <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize">d3.scale.quantize</a> is used to calculate the color scale. If <code>domain</code> has more than 2 values <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#threshold">d3.scale.threshold</a> is used, in this case the elements in the <code>domain</code> must be sorted in ascending order and <code>domain</code> must contain one element less than the <code>colors</code> array.</p></div>
+<p>If <code>domain</code> is an array with 2 values <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize">d3.scale.quantize</a> is used to calculate the color scale. If <code>domain</code> has more than 2 values <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#threshold">d3.scale.threshold</a> is used, in this case the elements in the <code>domain</code> must be sorted in ascending order and <code>domain</code> must contain one element less than the <code>colors</code> array.</p>
+<h4>format</h4>
+<p>The number format displayed in the legend and in tooltips.</p>
+<h4>legend</h4>
+<p>Defaults to <code>true</code>, i. e. display the built-in legend. If you prefer to add a legend on your own, set <code>legend</code> to <code>false</code> and implement a legend yourself in the <code>postUpdate</code> method.</p></div>
     </div>
   </div>
 </div>
