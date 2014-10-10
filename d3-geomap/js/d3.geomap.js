@@ -587,7 +587,11 @@
       domain_min = geomap["private"].domain[0];
       min_text = geomap.properties.format(domain_min);
       if (min_val < domain_min) {
-        min_text = '< ' + min_text;
+        if (geomap["private"].domain.length > 2) {
+          min_text = geomap.properties.format(min_val);
+        } else {
+          min_text = '< ' + min_text;
+        }
       }
       min_val_idx = colorlist.length - 1;
       return sg.selectAll('text.text-' + min_val_idx).text(min_text);
