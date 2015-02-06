@@ -398,6 +398,7 @@
       }
       this["private"] = {};
       this.selection = {};
+      this.geo = {};
     }
 
     Geomap.prototype.clicked = function(d) {
@@ -446,6 +447,7 @@
       }
       geomap.properties.path = d3.geo.path().projection(proj);
       return d3.json(geomap.properties.geofile, function(error, geo) {
+        geomap.geo = geo;
         geomap.selection.units = geomap["private"].g.selectAll('path').data(topojson.feature(geo, geo.objects[geomap.properties.units]).features);
         return geomap.update();
       });
@@ -488,7 +490,43 @@
         this.properties[name] = value;
         addAccessor(this, name, value);
       }
+      this.data_by_id = {};
     }
+
+    Choropleth.prototype.columnVal = function(id, col) {
+      var geomap;
+      geomap = this;
+      if (geomap.data_by_id[id]) {
+        return geomap.data_by_id[id][col];
+      } else {
+        return 'No data';
+      }
+    };
+
+    Choropleth.prototype.colorVal = function(id, col) {
+      var geomap;
+      geomap = this;
+      if (geomap.data_by_id[id]) {
+        return geomap.colorize(geomap.data_by_id[id][col]);
+      } else {
+        return '#eeeeee';
+      }
+    };
+
+    Choropleth.prototype.tooltip = function(d) {
+      var col, cols, geomap, text, _i, _len;
+      geomap = this;
+      text = d.properties.name + '\n\n';
+      text += geomap.properties.column + ': ' + geomap.properties.format(geomap.columnVal(d.id, geomap.properties.column)) + '\n\n';
+      cols = d3.keys(geomap.data_by_id[d.id]);
+      for (_i = 0, _len = cols.length; _i < _len; _i++) {
+        col = cols[_i];
+        if (col && (col !== geomap.properties.column && col !== geomap.unitId())) {
+          text += col + ': ' + geomap.columnVal(d.id, col) + '\n';
+        }
+      }
+      return text;
+    };
 
     Choropleth.prototype.draw = function(selection, geomap) {
       geomap["private"].data = selection.datum();
@@ -496,9 +534,8 @@
     };
 
     Choropleth.prototype.update = function() {
-      var color_val, d, data_by_id, geomap, iso_val, max, min, scaleFunc, unitId, val, _i, _len, _ref;
+      var d, geomap, max, min, scaleFunc, unitId, val, _i, _len, _ref;
       geomap = this;
-      data_by_id = {};
       unitId = geomap.properties.unitId;
       d3.selectAll('path.unit').remove();
       min = null;
@@ -513,7 +550,7 @@
         if (max === null || val > max) {
           max = val;
         }
-        data_by_id[d[unitId]] = val;
+        geomap.data_by_id[d[unitId]] = d;
       }
       geomap["private"].domain = geomap.properties.domain || [min, max];
       if (geomap["private"].domain.length > 2) {
@@ -522,24 +559,10 @@
         scaleFunc = d3.scale.quantize;
       }
       geomap.colorize = scaleFunc().domain(geomap["private"].domain).range(geomap.properties.colors);
-      iso_val = function(id) {
-        if (data_by_id[id] === null) {
-          return 'No data';
-        } else {
-          return geomap.properties.format(data_by_id[id]);
-        }
-      };
-      color_val = function(id) {
-        if (data_by_id[id] === null) {
-          return '#eeeeee';
-        } else {
-          return geomap.colorize(data_by_id[id]);
-        }
-      };
       geomap.selection.units.enter().append('path').attr('class', 'unit').attr('d', geomap.properties.path).style('fill', function(d) {
-        return color_val(d.id);
+        return geomap.colorVal(d.id, geomap.properties.column);
       }).on('click', geomap.clicked.bind(geomap)).append('title').text(function(d) {
-        return d.properties.name + ': ' + iso_val(d.id);
+        return geomap.tooltip(d);
       });
       if (geomap.properties.legend) {
         geomap.drawLegend(min, max);
@@ -560,6 +583,8 @@
       offset_y = geomap.properties.height - box_h;
       colorlist = geomap.properties.colors.slice().reverse();
       rect_h = legend_h / colorlist.length;
+      domain_min = geomap["private"].domain[0];
+      domain_max = geomap["private"].domain[geomap["private"].domain.length - 1];
       geomap.properties.svg.select('g#legend').remove();
       lg = geomap.properties.svg.append('g').attr('id', 'legend').attr('width', box_w).attr('height', box_h).attr('transform', 'translate(0,' + offset_y + ')');
       lg.append('rect').attr('class', 'legend-bg').attr('width', box_w).attr('height', box_h).attr('transform', 'translate(0, 0');
@@ -578,19 +603,25 @@
       }).attr('x', rect_w + offset_t).attr('y', function(d, i) {
         return i * rect_h + rect_h + offset_t;
       });
-      domain_max = geomap["private"].domain[geomap["private"].domain.length - 1];
       max_text = geomap.properties.format(domain_max);
       if (domain_max < max_val) {
-        max_text = '> ' + max_text;
+        if (domain_max > domain_min) {
+          max_text = '> ' + max_text;
+        } else {
+          max_text = '< ' + max_text;
+        }
       }
       sg.append('text').text(max_text).attr('x', rect_w + offset_t).attr('y', offset_t);
-      domain_min = geomap["private"].domain[0];
       min_text = geomap.properties.format(domain_min);
       if (min_val < domain_min) {
         if (geomap["private"].domain.length > 2) {
           min_text = geomap.properties.format(min_val);
         } else {
-          min_text = '< ' + min_text;
+          if (domain_max > domain_min) {
+            min_text = '< ' + min_text;
+          } else {
+            min_text = '> ' + min_text;
+          }
         }
       }
       min_val_idx = colorlist.length - 1;
