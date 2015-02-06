@@ -3,15 +3,31 @@
 <channel><title>Docs</title>
     <link>http://d3-geomap.github.io</link>
     <description>docs</description>
-    <lastBuildDate>Fri, 06 Feb 2015 23:05:54 </lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2015 00:25:44 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
-        <title>Map Properties - d3.geomap Documentation</title>
-        <link>http://d3-geomap.github.io/docs/map-properties/</link>
+        <title>References</title>
+        <link>http://localhost:8080/docs/references/</link>
         <description></description>
-        <guid>http://d3-geomap.github.io/docs/map-properties/</guid>
+        <guid>http://localhost:8080/docs/references/</guid>
+        <pubDate>Sat, 07 Feb 2015 00:02:22 </pubDate>
+    </item>
+    
+    <item>
+        <title>Creating TopoJSON Files</title>
+        <link>http://localhost:8080/docs/creating-topojson-files/</link>
+        <description></description>
+        <guid>http://localhost:8080/docs/creating-topojson-files/</guid>
+        <pubDate>Fri, 06 Feb 2015 23:34:22 </pubDate>
+    </item>
+    
+    <item>
+        <title>Map Properties</title>
+        <link>http://localhost:8080/docs/map-properties/</link>
+        <description></description>
+        <guid>http://localhost:8080/docs/map-properties/</guid>
         <pubDate>Thu, 02 Oct 2014 12:27:22 </pubDate>
     </item>
     

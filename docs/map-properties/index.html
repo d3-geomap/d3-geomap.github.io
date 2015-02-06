@@ -7,7 +7,7 @@
     
     
 
-    <title>Map Properties - d3.geomap Documentation</title>
+    <title>Map Properties • d3.geomap Documentation</title>
 
     
 
@@ -45,6 +45,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="/docs/map-properties/">Map Properties</a></li>
+                    <li><a href="/docs/creating-topojson-files/">Creating TopoJSON Files</a></li>
+                    <li><a href="/docs/references/">References</a></li>
                 </ul>
               </li>
               <li class="dropdown">
@@ -68,12 +70,12 @@
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-share"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A%2F%2Fd3-geomap.github.io%2Fdocs%2Fmap-properties%2F&text=Map+Properties+-+d3.geomap+Documentation" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fd3-geomap.github.io%2Fdocs%2Fmap-properties%2F&t=Map+Properties+-+d3.geomap+Documentation" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Fd3-geomap.github.io%2Fdocs%2Fmap-properties%2F" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fd3-geomap.github.io%2Fdocs%2Fmap-properties%2F&title=Map+Properties+-+d3.geomap+Documentation" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Fd3-geomap.github.io%2Fdocs%2Fmap-properties%2F&title=Map+Properties+-+d3.geomap+Documentation" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fd3-geomap.github.io%2Fdocs%2Fmap-properties%2F&title=Map+Properties+-+d3.geomap+Documentation" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fmap-properties%2F&text=Map+Properties" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fmap-properties%2F&t=Map+Properties" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fmap-properties%2F" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fmap-properties%2F&title=Map+Properties" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fmap-properties%2F&title=Map+Properties" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fmap-properties%2F&title=Map+Properties" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -85,16 +87,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-        <div><h1>Map Properties</h1>
-<p>Several properties can be set after initializing a d3.geomap object to influence the map display.</p>
+        <h1>Map Properties</h1>
+        <div><p>Several properties can be set after initializing a d3.geomap object to influence the map display.</p>
 <h3>General Properties</h3>
 <p>This section documents the properties that can/must be set when a d3.geomap object is created.</p>
 <h4>margin</h4>
 <p>Can be set but serves no purpose yet.</p>
 <h4>width</h4>
-<p>The width of the map defaults to 960px.</p>
+<p>The width of the map defaults to <code>960px</code>.</p>
 <h4>height</h4>
-<p>The height of the map defaults to 500px.</p>
+<p>The height of the map defaults to <code>500px</code>.</p>
 <h4>geofile</h4>
 <p>The topojson file, this is required.</p>
 <h4>postUpdate</h4>
@@ -102,13 +104,13 @@
 <h4>projection</h4>
 <p>The map projection to be used, defaults to d3.geo.naturalEarth. Can be selected from <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
 <h4>rotate</h4>
-<p>The rotation of the map, defaults to [0, 0, 0], i. e. the rotation you are most likely to expect.</p>
+<p>The rotation of the map, defaults to <code>[0, 0, 0]</code>, i. e. the rotation you are most likely to expect.</p>
 <h4>svg</h4>
 <p>The svg property can be used to access and manipulate the map DOM element.</p>
 <h4>title</h4>
 <p>The browser tooltip displayed when the mouse is moved over a map unit, e. g. a country in case of the default world map.</p>
 <h4>unitId</h4>
-<p>A property of the unit that is unique, e. g. the <em>iso3</em> code of a country, which is also the default value.</p>
+<p>A property of the unit that is unique, e. g. the <code>iso3</code> code of a country, which is also the default value.</p>
 <h4>units</h4>
 <p>The property of the topojson objects that define its form.</p>
 <h4>zoomMax</h4>

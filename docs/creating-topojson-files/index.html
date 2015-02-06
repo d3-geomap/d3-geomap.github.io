@@ -7,7 +7,7 @@
     
     
 
-    <title>World Upside Down • d3.geomap</title>
+    <title>Creating TopoJSON Files • d3.geomap Documentation</title>
 
     
 
@@ -24,11 +24,8 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-<link href="/d3-geomap/css/d3.geomap.css#v=#v=1" rel="stylesheet">
-
         
     
-
   </head>
 
   <body>
@@ -73,12 +70,12 @@
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-share"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A%2F%2Flocalhost%3A8080%2Fmap%2Fworld-upside-down%2F&text=World+Upside+Down" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fmap%2Fworld-upside-down%2F&t=World+Upside+Down" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A8080%2Fmap%2Fworld-upside-down%2F" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8080%2Fmap%2Fworld-upside-down%2F&title=World+Upside+Down" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A8080%2Fmap%2Fworld-upside-down%2F&title=World+Upside+Down" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Flocalhost%3A8080%2Fmap%2Fworld-upside-down%2F&title=World+Upside+Down" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fcreating-topojson-files%2F&text=Creating+TopoJSON+Files" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fcreating-topojson-files%2F&t=Creating+TopoJSON+Files" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fcreating-topojson-files%2F" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fcreating-topojson-files%2F&title=Creating+TopoJSON+Files" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fcreating-topojson-files%2F&title=Creating+TopoJSON+Files" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Flocalhost%3A8080%2Fdocs%2Fcreating-topojson-files%2F&title=Creating+TopoJSON+Files" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -89,30 +86,30 @@
     
 <div class="container">
   <div class="row">
-    <div class="col-lg-10 col-lg-offset-1">
-        <h1>World Upside Down</h1>
-        <div><p>This example shows how to create a rotated world map with <code>d3.geomap</code>.</p>
-<p>See the complete JavaScript code needed to render the map below.</p>
-<pre><code>var map = d3.geomap()
-    .geofile(&#39;/d3-geomap/topojson/world/countries.json&#39;)
-    .rotate([0, 0, 180]);
+    <div class="col-md-12">
+        <h1>Creating TopoJSON Files</h1>
+        <div><p>To roll your own TopoJSON files from a <a href="https://en.wikipedia.org/wiki/Shapefile">shapefile</a>, you need the <code>ogr2ogr</code> utility from the <a href="http://www.gdal.org/">GDAL library</a> and the <a href="https://github.com/mbostock/topojson">topojson package</a> that you can install with <code>npm</code>.</p>
+<h2>World Countries TopoJSON</h2>
+<p>First download a shapefile with administrative boundaries without boundary lakes from <a href="http://www.naturalearthdata.com/">naturalearthdata.com</a>.</p>
+<pre><code>wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries_lakes.zip
+</code></pre>
+<p>Convert the shapefile to GeoJSON.</p>
+<pre><code>ogr2ogr -f GeoJSON units.json ne_10m_admin_0_countries_lakes.shp
+</code></pre>
+<p>Convert GeoJSON to Topojson using simplification to reduce file size. The SU_A3 is used as the ID and the name as a property.</p>
+<pre><code>topojson --simplify-proportion .08 --id-property SU_A3 -p name=NAME -o countries.json units.json
+</code></pre>
+<h3>Fixing Country IDs</h3>
+<p>Not all the SU_A3 IDs match those used in the ISO_A3 standard. The <a href="https://github.com/yaph/d3-geomap">d3.geomap git repository</a> contains a Python script aptly called <a href="https://github.com/yaph/d3-geomap/blob/master/scripts/fixids.py">fixids.py</a> to replace the non-matching IDs with the corresponding ISO_A3 values. For more details refer to <a href="https://github.com/yaph/d3-geomap/issues/12">issue #12</a>.</p>
+<h2>Countries with Administrative Regions TopoJSON</h2>
+<p>Download a shapefile with administrative country regions.</p>
+<pre><code>wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces_lakes.zip
+</code></pre>
+<p>To create a Topojson file with US States run:</p>
+<pre><code>ogr2ogr -f GeoJSON -where "ADM0_A3 IN ('USA')" units.json ne_10m_admin_1_states_provinces_lakes.shp
 
-d3.select(&#39;#map&#39;)
-    .call(map.draw, map);
+topojson --simplify-proportion .08 --id-property fips -p name=name -o USA.json units.json
 </code></pre></div>
-        <div id="map"></div>
-        
-        <hr>
-        <h3>Example Maps</h3>
-<ul class="nav nav-pills nav-stacked">
-    
-        <li><a href="/map/choropleth/world/">Choropleth Map: World</a></li>
-    
-        <li><a href="/map/choropleth/us-states/">Choropleth Map: US States</a></li>
-    
-        <li><a href="/map/world-upside-down/">World Upside Down</a></li>
-    
-</ul>
     </div>
   </div>
 </div>
@@ -131,13 +128,7 @@ d3.select(&#39;#map&#39;)
     <script src="/js/script.js#v=1"></script>
 
     
-<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js#v=#v=1"></script>
-<script src="/d3-geomap/js/d3.geomap.min.js#v=#v=1"></script>
-
-        
-            <script src="/js/maps/world-upside-down.js#v=1"></script>
         
     
-
   </body>
 </html>
