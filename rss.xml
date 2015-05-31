@@ -2,64 +2,64 @@
 <rss version="2.0">
 <channel><title>RSS Feed</title>
     <link>http://d3-geomap.github.io</link>
-    <description></description>
-    <lastBuildDate>Mon, 02 Mar 2015 23:38:38 </lastBuildDate>
+    <description>RSS Feed</description>
+    <lastBuildDate>Sun, 31 May 2015 18:10:16 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
-        <title>References</title>
-        <link>http://d3-geomap.github.io/docs/references/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/docs/references/</guid>
+        <title><![CDATA[References]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/docs/references/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/references/]]></guid>
         <pubDate>Sat, 07 Feb 2015 00:02:22 </pubDate>
     </item>
     
     <item>
-        <title>Creating TopoJSON Files</title>
-        <link>http://d3-geomap.github.io/docs/creating-topojson-files/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/docs/creating-topojson-files/</guid>
+        <title><![CDATA[Creating TopoJSON Files]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></guid>
         <pubDate>Fri, 06 Feb 2015 23:34:22 </pubDate>
     </item>
     
     <item>
-        <title>Map Properties</title>
-        <link>http://d3-geomap.github.io/docs/map-properties/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/docs/map-properties/</guid>
+        <title><![CDATA[Map Properties]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></guid>
         <pubDate>Thu, 02 Oct 2014 12:27:22 </pubDate>
     </item>
     
     <item>
-        <title>World Upside Down</title>
-        <link>http://d3-geomap.github.io/map/world-upside-down/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/map/world-upside-down/</guid>
+        <title><![CDATA[World Upside Down]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></guid>
         <pubDate>Sun, 21 Sep 2014 12:46:22 </pubDate>
     </item>
     
     <item>
-        <title>Choropleth Map: US States</title>
-        <link>http://d3-geomap.github.io/map/choropleth/us-states/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/map/choropleth/us-states/</guid>
+        <title><![CDATA[Choropleth Map: US States]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:55:22 </pubDate>
     </item>
     
     <item>
-        <title>Choropleth Map: World</title>
-        <link>http://d3-geomap.github.io/map/choropleth/world/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/map/choropleth/world/</guid>
+        <title><![CDATA[Choropleth Map: World]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
     </item>
     
     <item>
-        <title>d3.geomap - Create Geographic Maps for the Web</title>
-        <link>http://d3-geomap.github.io/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/</guid>
+        <title><![CDATA[d3.geomap - Create Geographic Maps for the Web]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/]]></guid>
         <pubDate>Wed, 23 Jul 2014 19:53:22 </pubDate>
     </item>
     

@@ -2,24 +2,24 @@
 <rss version="2.0">
 <channel><title>Map » Choropleth</title>
     <link>http://d3-geomap.github.io</link>
-    <description>map/choropleth</description>
-    <lastBuildDate>Mon, 02 Mar 2015 23:38:38 </lastBuildDate>
+    <description>Map » Choropleth</description>
+    <lastBuildDate>Sun, 31 May 2015 18:10:16 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
-        <title>Choropleth Map: US States</title>
-        <link>http://d3-geomap.github.io/map/choropleth/us-states/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/map/choropleth/us-states/</guid>
+        <title><![CDATA[Choropleth Map: US States]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:55:22 </pubDate>
     </item>
     
     <item>
-        <title>Choropleth Map: World</title>
-        <link>http://d3-geomap.github.io/map/choropleth/world/</link>
-        <description></description>
-        <guid>http://d3-geomap.github.io/map/choropleth/world/</guid>
+        <title><![CDATA[Choropleth Map: World]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
     </item>
     
