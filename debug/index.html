@@ -94,19 +94,17 @@
     <div class="col-lg-10 col-lg-offset-1">
         <h1>Choropleth Map: US States</h1>
         <div><h2>Source</h2>
-<pre><code>var map = d3.geomap.choropleth()
+<pre><code>var map = d3.geomap()
     .geofile(&#39;/d3-geomap/topojson/countries/USA.json&#39;)
     .projection(d3.geo.albersUsa)
-    .column(&#39;2012&#39;)
-    .unitId(&#39;fips&#39;)
     .scale(1000)
-    .legend(true);
+    .postUpdate(function() {
+        map.svg.selectAll(&#39;.unit&#39;).style(&#39;fill&#39;, &#39;red&#39;);
+    });
 
-d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
-    d3.select(&#39;#map&#39;)
-        .datum(data)
-        .call(map.draw, map);
-});
+d3.select(&#39;#map&#39;)
+    .call(map.draw, map);
+
 </code></pre></div>
         <div id="map"></div>
         
