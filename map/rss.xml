@@ -3,31 +3,31 @@
 <channel><title>Map</title>
     <link>http://d3-geomap.github.io</link>
     <description>Map</description>
-    <lastBuildDate>Tue, 16 Jun 2015 17:01:16 </lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2015 17:08:03 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
         <title><![CDATA[World Upside Down]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></link>
+        <link><![CDATA[http://localhost:8080/map/world-upside-down/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></guid>
+        <guid><![CDATA[http://localhost:8080/map/world-upside-down/]]></guid>
         <pubDate>Sun, 21 Sep 2014 12:46:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Choropleth Map: US States]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></link>
+        <link><![CDATA[http://localhost:8080/map/choropleth/us-states/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></guid>
+        <guid><![CDATA[http://localhost:8080/map/choropleth/us-states/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:55:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Choropleth Map: World]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></link>
+        <link><![CDATA[http://localhost:8080/map/choropleth/world/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></guid>
+        <guid><![CDATA[http://localhost:8080/map/choropleth/world/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
     </item>
     
