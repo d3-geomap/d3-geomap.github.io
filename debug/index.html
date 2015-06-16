@@ -75,12 +75,12 @@
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
     <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&text=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/map/choropleth/us-states/&t=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/debug/&text=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/debug/&t=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/debug/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/debug/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/debug/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/debug/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -93,10 +93,7 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <h1>Choropleth Map: US States</h1>
-        <div><p>This example shows how to create a choropleth map of states in the US using data from the <a href="http://www.nsf.gov/statistics/seind14/index.cfm/state-data/download.htm">National Science Foundation</a> about venture capital spent in the US in 2012.</p>
-<p>I'll only explain the differences to the example <a href="/map/choropleth/world/">choropleth map of the world</a>, where you can learn about the meaning of the other settings.</p>
-<p>Since this is a map of the US, we load the appropriate topojson file and set the map object to use the <code>d3.geo.albersUsa</code> projection. The <code>unitId</code> used in this topojson source is the <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code">FIPS code</a>. Since we don't use the default projection (<code>d3.geo.naturalEarth</code>) we need to set the <code>scale</code> so the map fits well into the layout, in this case <code>1000</code> is a good value.</p>
-<p>The remaining code should be straight-forward, provided you read the explanation of the <a href="/map/choropleth/world/">choropleth world map example</a>.</p>
+        <div><h2>Source</h2>
 <pre><code>var map = d3.geomap.choropleth()
     .geofile(&#39;/d3-geomap/topojson/countries/USA.json&#39;)
     .projection(d3.geo.albersUsa)
@@ -158,7 +155,7 @@ d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
 <script src="/d3-geomap/js/d3.geomap.min.js#v=#v=1"></script>
 
         
-            <script src="/js/maps/choropleth/us-states.js#v=1"></script>
+            <script src="/js/maps/choropleth/debug.js#v=1"></script>
         
     
 

@@ -11,5 +11,5 @@ d3.csv('/data/venture-capital.csv', function(error, data) {
         .datum(data)
         .call(map.draw, map);
 
-    debugger;
+    map.svg.selectAll('.unit').style('fill', 'red');
 });
