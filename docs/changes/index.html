@@ -67,7 +67,7 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-1.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap-1.0.1.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
@@ -91,6 +91,10 @@
     <div class="col-md-12">
         <h1>Changelog</h1>
         <div><p>This page lists significant changes introduced in releases of d3.geomap.</p>
+<h2>Changes in Version 1.0.1</h2>
+<ul>
+<li>Use ES5 forEach instead of ES6 for of to avoid using polyfill to support older browsers.</li>
+</ul>
 <h2>Changes in Version 1.0.0</h2>
 <p>d3.geomap was originally written in CoffeeScript. For version 1 I ported it to JavaScript or more specifically the EcmaScript specifications supported by babeljs.</p>
 <p>In an effort to simplify the code and make it more readably and maintainable, I refactored the library internally. The public facing API stayed mostly the same, except for the changes listed below.</p>
