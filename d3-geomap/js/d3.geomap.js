@@ -481,25 +481,17 @@ var Choropleth = (function (_Geomap) {
             self.svg.selectAll('path.unit').style('fill', null);
 
             // Add new fill styles based on data values.
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
+            self.data.forEach(function (d) {
+                var uid = d[self.properties.unitId],
+                    val = d[self.properties.column],
+                    fill = self.colorScale(val);
 
-            try {
-                for (var _iterator = self.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var d = _step.value;
+                // selectAll must be called and not just select, otherwise the data
+                // attribute of the selected path object is overwritten with self.data.
+                var unit = self.svg.selectAll('.' + self.properties.unitPrefix + '' + uid);
 
-                    var uid = d[self.properties.unitId],
-                        val = d[self.properties.column],
-                        fill = self.colorScale(val);
-
-                    // selectAll must be called and not just select, otherwise the data
-                    // attribute of the selected path object is overwritten with self.data.
-                    var unit = self.svg.selectAll('.' + self.properties.unitPrefix + '' + uid);
-
-                    // Data can contain values for non existing units.
-                    if (unit.empty()) continue;
-
+                // Data can contain values for non existing units.
+                if (!unit.empty()) {
                     if (self.properties.duration) unit.transition().duration(self.properties.duration).style('fill', fill);else unit.style('fill', fill);
 
                     // New title with column and value.
@@ -507,20 +499,7 @@ var Choropleth = (function (_Geomap) {
                     val = self.properties.format(val);
                     unit.select('title').text('' + text + '\n\n' + self.properties.column + ': ' + val);
                 }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator['return']) {
-                        _iterator['return']();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
+            });
 
             if (self.properties.legend) self.drawLegend(self.properties.legend);
 
