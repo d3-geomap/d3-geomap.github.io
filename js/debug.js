@@ -4,12 +4,13 @@ var map = d3.geomap.choropleth()
     .column('2012')
     .unitId('fips')
     .scale(1000)
-    .legend(true);
+    .legend(true)
+    .postUpdate(function() {
+        map.svg.selectAll('.unit').style('fill', 'red');
+    });
 
 d3.csv('/data/venture-capital.csv', function(error, data) {
     d3.select('#map')
         .datum(data)
         .call(map.draw, map);
-
-    map.svg.selectAll('.unit').style('fill', 'red');
 });
