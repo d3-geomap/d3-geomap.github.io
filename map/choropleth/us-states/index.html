@@ -102,8 +102,7 @@
     .projection(d3.geo.albersUsa)
     .column(&#39;2012&#39;)
     .unitId(&#39;fips&#39;)
-    .scale(1000)
-    .legend(true);
+    .scale(1000);
 
 d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
     d3.select(&#39;#map&#39;)

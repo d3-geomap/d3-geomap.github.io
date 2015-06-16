@@ -3,8 +3,7 @@ var map = d3.geomap.choropleth()
     .projection(d3.geo.albersUsa)
     .column('2012')
     .unitId('fips')
-    .scale(1000)
-    .legend(true);
+    .scale(1000);
 
 d3.csv('/data/venture-capital.csv', function(error, data) {
     d3.select('#map')
