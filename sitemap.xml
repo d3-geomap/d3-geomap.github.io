@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+<url><loc><![CDATA[http://d3-geomap.github.io/docs/changes/]]></loc><lastmod>2015-06-16</lastmod></url>
+
 <url><loc><![CDATA[http://d3-geomap.github.io/docs/references/]]></loc><lastmod>2015-02-07</lastmod></url>
 
 <url><loc><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></loc><lastmod>2015-02-07</lastmod></url>
 
-<url><loc><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></loc><lastmod>2015-02-07</lastmod></url>
+<url><loc><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></loc><lastmod>2015-06-16</lastmod></url>
 
 <url><loc><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></loc><lastmod>2015-02-07</lastmod></url>
 
@@ -13,6 +15,6 @@
 
 <url><loc><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></loc><lastmod>2015-02-07</lastmod></url>
 
-<url><loc><![CDATA[http://d3-geomap.github.io/]]></loc><lastmod>2015-05-31</lastmod></url>
+<url><loc><![CDATA[http://d3-geomap.github.io/]]></loc><lastmod>2015-06-14</lastmod></url>
 
 </urlset>

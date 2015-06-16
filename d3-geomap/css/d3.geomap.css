@@ -1,5 +1,5 @@
 text {
-  fill: #333333;
+  fill: #333;
   font-size: 12px; }
 
 .background {
@@ -8,14 +8,16 @@ text {
 
 .unit {
   cursor: pointer;
-  fill: #cccccc;
-  stroke: black;
+  fill: #ccc;
+  stroke: #000;
   stroke-width: 0.4px; }
 
 .legend-bg {
-  fill: white;
+  fill: #fff;
   fill-opacity: 0.8; }
 
 .legend-bar {
-  stroke: #333333;
+  stroke: #333;
   stroke-width: 1px; }
+
+/*# sourceMappingURL=geomap.css.map */

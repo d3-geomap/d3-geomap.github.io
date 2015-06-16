@@ -7,7 +7,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>Map Properties • d3.geomap Documentation</title>
+    <title>Map Properties - Accessors and Attributes • d3.geomap Documentation</title>
 
     
 
@@ -47,6 +47,7 @@
                     <li><a href="/docs/map-properties/">Map Properties</a></li>
                     <li><a href="/docs/creating-topojson-files/">Creating TopoJSON Files</a></li>
                     <li><a href="/docs/references/">References</a></li>
+                    <li><a href="/docs/changes/">Changelog</a></li>
                 </ul>
               </li>
               <li class="dropdown">
@@ -66,17 +67,17 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-0.1.2.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap-1.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
     <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/docs/map-properties/&text=Map%20Properties" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/docs/map-properties/&t=Map%20Properties" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/docs/map-properties/&text=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/docs/map-properties/&t=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
     <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/docs/map-properties/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -88,47 +89,66 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-        <h1>Map Properties</h1>
-        <div><p>Several properties can be set after initializing a d3.geomap object to influence the map display.</p>
-<h3>General Properties</h3>
-<p>This section documents the properties that can/must be set when a d3.geomap object is created.</p>
-<h4>margin</h4>
-<p>Can be set but serves no purpose yet.</p>
-<h4>width</h4>
-<p>The width of the map defaults to <code>960px</code>.</p>
-<h4>height</h4>
-<p>The height of the map defaults to <code>500px</code>.</p>
-<h4>geofile</h4>
-<p>The topojson file, this is required.</p>
-<h4>postUpdate</h4>
-<p>function to run when update process is completed, i. e. the map is rendered. This can be used to draw symbols or provide your on zoom function for example.</p>
-<h4>projection</h4>
-<p>The map projection to be used, defaults to d3.geo.naturalEarth. Can be selected from <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
-<h4>rotate</h4>
-<p>The rotation of the map, defaults to <code>[0, 0, 0]</code>, i. e. the rotation you are most likely to expect.</p>
-<h4>svg</h4>
-<p>The svg property can be used to access and manipulate the map DOM element.</p>
-<h4>title</h4>
-<p>The browser tooltip displayed when the mouse is moved over a map unit, e. g. a country in case of the default world map.</p>
-<h4>unitId</h4>
+        <h1>Map Properties - Accessors and Attributes</h1>
+        <div><p>Maps can be customized through the accessors documented here. If an accessor is called with a value the value will be set and the map object returned. If called without an argument the current value of the corresponding property will be returned.</p>
+<p>In addition map properties can be accessed via attributes to allow for customizations beyond the capabilities of this library.</p>
+<h3>d3.geomap accessors</h3>
+<p>This section documents accessors that can/must be set when a d3.geomap object is created.</p>
+<h4>geofile - required</h4>
+<p>The topojson file loaded to draw the map units, for example countries on a world map.</p>
+<h4>height - optional</h4>
+<p>The height of the map. By default will be calculated based on width.</p>
+<h4>postUpdate - optional</h4>
+<p>A function to run when the update process is completed, i. e. the map is rendered. This can be used to draw symbols or provide your on zoom function for example.</p>
+<h4>projection - optional</h4>
+<p>The map projection to be used. Defaults to <code>d3.geo.naturalEarth</code>. Can be selected from <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
+<h4>rotate - optional</h4>
+<p>The rotation of the map. Defaults to <code>[0, 0, 0]</code>, i. e. the rotation you are most likely to expect.</p>
+<h4>scale - optional</h4>
+<p>A numeric value to set the size of the map. By default will be calculated based on width.</p>
+<h4>translate - optional</h4>
+<p>An array of x and y coordinates in pixels to center the map. By default will be calculated based on width.</p>
+<h4>unitId - optional</h4>
 <p>A property of the unit that is unique, e. g. the <code>iso3</code> code of a country, which is also the default value.</p>
-<h4>units</h4>
-<p>The property of the topojson objects that define its form.</p>
-<h4>zoomMax</h4>
-<p>The zoom factor to use when a map unit is clicked.</p>
-<h3>Choropleth Properties</h3>
-<p>Properties specific to d3.geomap.choropleth objects.</p>
-<h4>column</h4>
+<h4>unitPrefix - optional</h4>
+<p>The value of <code>unitPrefix</code> is used to prefix CSS classes of units. It defaults to <code>unit-</code>, e. g. Spain would get a CSS class of <code>unit-ESP</code>.</p>
+<h4>units - optional</h4>
+<p>The name of the <code>topojson.objects</code> property that contains the geographic units to display on the map.</p>
+<h4>unitTitle - optional</h4>
+<p>A function that receives the topojson feature object for the corresponding map unit, when the mouse is moved over it. The return value of this functions is the text shown in the standard browser tooltip. Defaults to <code>(d) =&gt; d.properties.name</code>.</p>
+<h4>width - optional</h4>
+<p>The width of the map. By default will be set to the width of the containing element, i. e. the element passed to the selection.</p>
+<h4>zoomFactor - optional</h4>
+<p>The zoom factor to use when a map unit is clicked. Defaults to 4.</p>
+<h3>d3.geomap attributes</h3>
+<h4>geo</h4>
+<p>The loaded topojson data, which gets assigned during the draw method.</p>
+<h4>svg</h4>
+<p>The <a href="https://github.com/mbostock/d3/wiki/Selections">d3.selection</a> for the map object.</p>
+<h3>d3.geomap.choropleth accesors</h3>
+<p>In addition to the accessors from d3.geomap, d3.geomap.choropleth objects provide the accessors listed below..</p>
+<h4>column - required</h4>
 <p>The column from the CSV file that contains the values to be displayed on the map. You provide the appropriate column heading as a string value to the column method.</p>
-<h4>colors</h4>
-<p>An array of color values. You can use <a href="http://colorbrewer2.org/">color brewer</a> schemes available via the <code>colorbrewer</code> object, e. g. <code>colorbrewer.YlOrRd[9]</code> for a sequential Yellow, Orange, Red scheme with 9 different color values.</p>
-<h4>domain</h4>
-<p>The optional <code>domain</code> property allows you to specify the range of values used to colorize that map. If no <code>domain</code> is given the range will be determined from the data series.</p>
-<p>If <code>domain</code> is an array with 2 values <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize">d3.scale.quantize</a> is used to calculate the color scale. If <code>domain</code> has more than 2 values <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#threshold">d3.scale.threshold</a> is used, in this case the elements in the <code>domain</code> must be sorted in ascending order and <code>domain</code> must contain one element less than the <code>colors</code> array.</p>
-<h4>format</h4>
-<p>The number format displayed in the legend and in tooltips.</p>
-<h4>legend</h4>
-<p>Defaults to <code>true</code>, i. e. display the built-in legend. If you prefer to add a legend on your own, set <code>legend</code> to <code>false</code> and implement a legend yourself in the <code>postUpdate</code> method.</p></div>
+<h4>colors - optional</h4>
+<p>An array of color values. You can use <a href="http://colorbrewer2.org/">color brewer</a> schemes available via the <code>colorbrewer</code> object, e. g. <code>colorbrewer.OrRd[9]</code> for a sequential orange-red scheme with 9 different color values, which is the default.</p>
+<h4>domain - optional</h4>
+<p>Specify the array of values used to determine appropriate color values. Defaults to the extent of values from the data series set via the <code>column</code> accessor.</p>
+<h4>format - optional</h4>
+<p>The number format used for values displayed in the legend and in tooltips. Defaults to <code>d3.format(',.02f')</code>.</p>
+<h4>legend - optional</h4>
+<p>Defaults to <code>false</code>, so you can create your own legend by providing the code to draw it as a callback function to the <code>postUpdate</code> method.</p>
+<p>If set to <code>true</code> the built-in legend will be displayed. You can set the width and height of the legend by passing an object with <code>width</code> and <code>height</code> attributes set to numeric values.</p>
+<h4>duration - optional</h4>
+<p>If set countries will be colored using a transition of the specified duration in milliseconds. Defaults to <code>null</code>, i. e. no transition animation.</p>
+<h4>valueScale - optional</h4>
+<p>The D3 scale function to use to determine colors based on the domain, i. e. the input values, and the color range. Defaults to <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize">d3.scale.quantize</a>.</p>
+<h3>d3.geomap.choropleth attributes</h3>
+<h4>data</h4>
+<p>The data object created from the loaded CSV file.</p>
+<h4>colorScale</h4>
+<p>A function that returns the color from the range of colors for the numeric value passed as its argument.</p>
+<h4>extent</h4>
+<p>The extent of the data range, i. e. minimum and maximum value in the given column of the CSV data file.</p></div>
     </div>
   </div>
 </div>

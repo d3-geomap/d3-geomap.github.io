@@ -3,9 +3,17 @@
 <channel><title>__Index__</title>
     <link>http://d3-geomap.github.io</link>
     <description>__Index__</description>
-    <lastBuildDate>Sun, 31 May 2015 18:17:52 </lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2015 13:23:13 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    
+    <item>
+        <title><![CDATA[Changelog]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/docs/changes/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/changes/]]></guid>
+        <pubDate>Thu, 11 Jun 2015 21:15:47 </pubDate>
+    </item>
     
     <item>
         <title><![CDATA[References]]></title>
@@ -24,7 +32,7 @@
     </item>
     
     <item>
-        <title><![CDATA[Map Properties]]></title>
+        <title><![CDATA[Map Properties - Accessors and Attributes]]></title>
         <link><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></link>
         <description><![CDATA[]]></description>
         <guid><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></guid>

@@ -7,7 +7,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>__Index__ • d3.geomap Documentation</title>
+    <title>Changelog • d3.geomap Documentation</title>
 
     
 
@@ -72,12 +72,12 @@
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
     <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=&text=__Index__" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=&t=__Index__" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=&title=__Index__" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=&title=__Index__" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=&title=__Index__" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/docs/changes/&text=Changelog" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/docs/changes/&t=Changelog" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/docs/changes/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/docs/changes/&title=Changelog" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/docs/changes/&title=Changelog" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/docs/changes/&title=Changelog" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -89,58 +89,24 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-        <h1 class="index_heading">__Index__</h1>
-        <ul class="list-unstyled index_docs">
-        
-            <li>
-                <h2><a href="/docs/changes/">Changelog</a></h2>
-                <p><i class="fa fa-calendar"></i> June 11, 2015</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/docs/references/">References</a></h2>
-                <p><i class="fa fa-calendar"></i> February 07, 2015</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/docs/creating-topojson-files/">Creating TopoJSON Files</a></h2>
-                <p><i class="fa fa-calendar"></i> February 06, 2015</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/docs/map-properties/">Map Properties - Accessors and Attributes</a></h2>
-                <p><i class="fa fa-calendar"></i> October 02, 2014</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/map/world-upside-down/">World Upside Down</a></h2>
-                <p><i class="fa fa-calendar"></i> September 21, 2014</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/map/choropleth/us-states/">Choropleth Map: US States</a></h2>
-                <p><i class="fa fa-calendar"></i> July 23, 2014</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/map/choropleth/world/">Choropleth Map: World</a></h2>
-                <p><i class="fa fa-calendar"></i> July 23, 2014</p>
-                <p></p>
-            </li>
-        
-            <li>
-                <h2><a href="/">d3.geomap - Create Geographic Maps for the Web</a></h2>
-                <p><i class="fa fa-calendar"></i> July 23, 2014</p>
-                <p></p>
-            </li>
-        
-        </ul>
+        <h1>Changelog</h1>
+        <div><p>This page lists significant changes introduced in releases of d3.geomap.</p>
+<h2>Changes in Version 1.0.0</h2>
+<p>d3.geomap was originally written in CoffeeScript. For version 1 I ported it to JavaScript or more specifically the EcmaScript specifications supported by babeljs.</p>
+<p>In an effort to simplify the code and make it more readably and maintainable, I refactored the library internally. The public facing API stayed mostly the same, except for the changes listed below.</p>
+<ul>
+<li>Turned <code>svg</code> accessor method into an attribute in d3.geomap.</li>
+<li>Renamed <code>zoomMax</code> accessor to <code>zoomFactor</code>.</li>
+<li>Renamed <code>title</code> accessor to <code>unitTitle</code>.</li>
+<li>Removed <code>data_by_id</code>, <code>selection</code>, and <code>private</code> attributes from d3.geomap.choropleth.</li>
+</ul>
+<h3>New Features</h3>
+<ul>
+<li>Maps are now responsive by default if width is not set.</li>
+<li>Added the <code>duration</code> and <code>valueScale</code> accessors to d3.geomap.choropleth.</li>
+<li>Added <code>colorScale</code> and <code>extend</code> attributes to d3.geomap.choropleth.</li>
+<li><code>legend</code> accessor can now be called with an object having width and height attributes to set the legend dimensions.</li>
+</ul></div>
     </div>
   </div>
 </div>
