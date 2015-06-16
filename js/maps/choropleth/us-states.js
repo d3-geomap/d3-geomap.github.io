@@ -10,6 +10,4 @@ d3.csv('/data/venture-capital.csv', function(error, data) {
     d3.select('#map')
         .datum(data)
         .call(map.draw, map);
-
-    debugger;
 });
