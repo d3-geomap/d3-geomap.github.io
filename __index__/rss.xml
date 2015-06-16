@@ -3,71 +3,71 @@
 <channel><title>__Index__</title>
     <link>http://d3-geomap.github.io</link>
     <description>__Index__</description>
-    <lastBuildDate>Tue, 16 Jun 2015 17:08:49 </lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2015 17:14:33 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
         <title><![CDATA[Changelog]]></title>
-        <link><![CDATA[http://localhost:8080/docs/changes/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/docs/changes/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/docs/changes/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/changes/]]></guid>
         <pubDate>Thu, 11 Jun 2015 21:15:47 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[References]]></title>
-        <link><![CDATA[http://localhost:8080/docs/references/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/docs/references/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/docs/references/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/references/]]></guid>
         <pubDate>Sat, 07 Feb 2015 00:02:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Creating TopoJSON Files]]></title>
-        <link><![CDATA[http://localhost:8080/docs/creating-topojson-files/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/docs/creating-topojson-files/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></guid>
         <pubDate>Fri, 06 Feb 2015 23:34:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Map Properties - Accessors and Attributes]]></title>
-        <link><![CDATA[http://localhost:8080/docs/map-properties/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/docs/map-properties/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/map-properties/]]></guid>
         <pubDate>Thu, 02 Oct 2014 12:27:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[World Upside Down]]></title>
-        <link><![CDATA[http://localhost:8080/map/world-upside-down/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/map/world-upside-down/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/map/world-upside-down/]]></guid>
         <pubDate>Sun, 21 Sep 2014 12:46:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Choropleth Map: US States]]></title>
-        <link><![CDATA[http://localhost:8080/map/choropleth/us-states/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/map/choropleth/us-states/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:55:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Choropleth Map: World]]></title>
-        <link><![CDATA[http://localhost:8080/map/choropleth/world/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/map/choropleth/world/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[d3.geomap - Create Geographic Maps for the Web]]></title>
-        <link><![CDATA[http://localhost:8080/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://localhost:8080/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/]]></guid>
         <pubDate>Wed, 23 Jul 2014 19:53:22 </pubDate>
     </item>
     
