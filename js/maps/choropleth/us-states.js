@@ -3,6 +3,7 @@ var map = d3.geomap.choropleth()
     .projection(d3.geo.albersUsa)
     .column('2012')
     .unitId('fips')
+    .unitPrefix('uid')
     .scale(1000)
     .legend(true);
 
