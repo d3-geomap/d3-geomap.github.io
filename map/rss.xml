@@ -3,9 +3,17 @@
 <channel><title>Map</title>
     <link>http://d3-geomap.github.io</link>
     <description>Map</description>
-    <lastBuildDate>Tue, 16 Jun 2015 21:32:04 </lastBuildDate>
+    <lastBuildDate>Wed, 15 Jun 2016 12:27:28 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    
+    <item>
+        <title><![CDATA[Choropleth Map with Custom Data Domain]]></title>
+        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/custom-domain/]]></link>
+        <description><![CDATA[]]></description>
+        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/custom-domain/]]></guid>
+        <pubDate>Wed, 15 Jun 2016 12:24:16 </pubDate>
+    </item>
     
     <item>
         <title><![CDATA[World Upside Down]]></title>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+<url><loc><![CDATA[http://d3-geomap.github.io/map/choropleth/custom-domain/]]></loc><lastmod>2016-06-15</lastmod></url>
+
 <url><loc><![CDATA[http://d3-geomap.github.io/docs/changes/]]></loc><lastmod>2015-06-16</lastmod></url>
 
 <url><loc><![CDATA[http://d3-geomap.github.io/docs/references/]]></loc><lastmod>2015-02-07</lastmod></url>

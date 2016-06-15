@@ -7,7 +7,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>About Project • d3.geomap Documentation</title>
+    <title>Choropleth Map with Custom Data Domain • d3.geomap</title>
 
     
 
@@ -24,8 +24,11 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
+<link href="/d3-geomap/css/d3.geomap.css#v=#v=1" rel="stylesheet">
+
         
     
+
   </head>
 
   <body>
@@ -74,12 +77,12 @@
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
     <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/about/&text=About%20Project" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/about/&t=About%20Project" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/about/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/about/&title=About%20Project" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/about/&title=About%20Project" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/about/&title=About%20Project" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/custom-domain/&text=Choropleth%20Map%20with%20Custom%20Data%20Domain" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/map/choropleth/custom-domain/&t=Choropleth%20Map%20with%20Custom%20Data%20Domain" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/custom-domain/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/map/choropleth/custom-domain/&title=Choropleth%20Map%20with%20Custom%20Data%20Domain" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/custom-domain/&title=Choropleth%20Map%20with%20Custom%20Data%20Domain" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/custom-domain/&title=Choropleth%20Map%20with%20Custom%20Data%20Domain" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -90,7 +93,35 @@
     
 <div class="container">
   <div class="row">
-    <div class="col-md-2 menu-sm">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h1>Choropleth Map with Custom Data Domain</h1>
+        <div><p>A map demonstrating how to use a custom data domain, as an example for <a href="https://stackoverflow.com/questions/37821940/using-d3-geomap-to-display-1-0-data">this question on StackOverflow</a>. I replaced empty values in the CSV file with <code>NaN</code> for this to work, otherwise empty values get the same color as <code>0</code> values, i. e. in this case Austria (AUT) would be green as well.</p>
+<p>See the complete JavaScript code needed to render the map below.</p>
+<pre><code>var map = d3.geomap.choropleth()
+    .geofile(&#39;/d3-geomap/topojson/world/countries.json&#39;)
+    .colors([&#39;green&#39;,&#39;red&#39;, &#39;grey&#39;])
+    .column(&#39;1800&#39;)
+    .domain([0, 1])
+    .legend(false)
+    .unitId(&#39;Country&#39;);
+
+d3.csv(&#39;/data/custom-domain.csv&#39;, function(error, data) {
+    d3.select(&#39;#map&#39;)
+        .datum(data)
+        .call(map.draw, map);
+});
+</code></pre></div>
+        <div id="map"></div>
+        
+            <h3>Data</h3>
+            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3.geomap.</p>
+            <pre>Country,1800,1801,1802
+AGO,0,0,0
+ARG,0,0,1
+AUS,0,0,0
+AUT,NaN,0,0...</pre>
+        
+        <hr>
         <h3>Example Maps</h3>
 <ul class="nav nav-pills nav-stacked">
     
@@ -103,20 +134,6 @@
         <li><a href="/map/choropleth/custom-domain/">Choropleth Map with Custom Data Domain</a></li>
     
 </ul>
-    </div>
-    <div class="col-md-10">
-        <h1>About Project</h1>
-        <div><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac
-cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p></div>
-        <div id="map"></div>
-        
     </div>
   </div>
 </div>
@@ -135,7 +152,13 @@ amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.<
     <script src="/js/script.js#v=1"></script>
 
     
+<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js#v=#v=1"></script>
+<script src="/d3-geomap/js/d3.geomap.min.js#v=#v=1"></script>
+
+        
+            <script src="/js/maps/choropleth/custom-domain.js#v=1"></script>
         
     
+
   </body>
 </html>
