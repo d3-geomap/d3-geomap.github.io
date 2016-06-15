@@ -372,8 +372,6 @@ var Geomap = (function () {
 
             this.svg.selectAll('g.zoom').transition().duration(750).attr('transform', 'translate(' + x0 + ', ' + y0 + ')scale(' + k + ')translate(-' + x + ', -' + y + ')');
         }
-    }, {
-        key: 'draw',
 
         /**
          * Load geo data once here and draw map. Call update at the end.
@@ -382,6 +380,8 @@ var Geomap = (function () {
          * selection container element so they are responsive. Properties set before
          * will be kept.
          */
+    }, {
+        key: 'draw',
         value: function draw(selection, self) {
             if (!self.properties.width) self.properties.width = selection.node().getBoundingClientRect().width;
 
@@ -396,7 +396,7 @@ var Geomap = (function () {
             self.svg.append('rect').attr('class', 'background').attr('width', self.properties.width).attr('height', self.properties.height).on('click', self.clicked.bind(self));
 
             // Set map projection and path.
-            var proj = self.properties.projection().scale(self.properties.scale).translate(self.properties.translate).precision(0.1);
+            var proj = self.properties.projection().scale(self.properties.scale).translate(self.properties.translate).precision(.1);
 
             // Not every projection supports rotation, e. g. albersUsa does not.
             if (proj.hasOwnProperty('rotate') && self.properties.rotate) proj.rotate(self.properties.rotate);
@@ -407,7 +407,7 @@ var Geomap = (function () {
             d3.json(self.properties.geofile, function (error, geo) {
                 self.geo = geo;
                 self.svg.append('g').attr('class', 'units zoom').selectAll('path').data(topojson.feature(geo, geo.objects[self.properties.units]).features).enter().append('path').attr('class', function (d) {
-                    return 'unit ' + self.properties.unitPrefix + '' + d.id;
+                    return 'unit ' + self.properties.unitPrefix + d.id;
                 }).attr('d', self.path).on('click', self.clicked.bind(self)).append('title').text(self.properties.unitTitle);
                 self.update();
             });
@@ -429,13 +429,15 @@ d3.geomap = function () {
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x2, _x3, _x4) { var _again = true; _function: while (_again) { var object = _x2, property = _x3, receiver = _x4; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x2 = parent; _x3 = property; _x4 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x2, _x3, _x4) { var _again = true; _function: while (_again) { var object = _x2, property = _x3, receiver = _x4; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x2 = parent; _x3 = property; _x4 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Choropleth = (function (_Geomap) {
+    _inherits(Choropleth, _Geomap);
+
     function Choropleth() {
         _classCallCheck(this, Choropleth);
 
@@ -456,8 +458,6 @@ var Choropleth = (function (_Geomap) {
             addAccessor(this, key, properties[key]);
         }
     }
-
-    _inherits(Choropleth, _Geomap);
 
     _createClass(Choropleth, [{
         key: 'columnVal',
@@ -492,7 +492,7 @@ var Choropleth = (function (_Geomap) {
 
                 // selectAll must be called and not just select, otherwise the data
                 // attribute of the selected path object is overwritten with self.data.
-                var unit = self.svg.selectAll('.' + self.properties.unitPrefix + '' + uid);
+                var unit = self.svg.selectAll('.' + self.properties.unitPrefix + uid);
 
                 // Data can contain values for non existing units and values can be empty or NaN.
                 if (!unit.empty() && self.defined(val)) {
@@ -503,7 +503,7 @@ var Choropleth = (function (_Geomap) {
 
                     // New title with column and value.
                     val = self.properties.format(val);
-                    unit.select('title').text('' + text + '\n\n' + self.properties.column + ': ' + val);
+                    unit.select('title').text(text + '\n\n' + self.properties.column + ': ' + val);
                 }
             });
 
@@ -512,8 +512,6 @@ var Choropleth = (function (_Geomap) {
             // Make sure postUpdate function is run if set.
             _get(Object.getPrototypeOf(Choropleth.prototype), 'update', this).call(this);
         }
-    }, {
-        key: 'drawLegend',
 
         /**
          * Draw legend including color scale and labels.
@@ -522,8 +520,10 @@ var Choropleth = (function (_Geomap) {
          * the map dimensions. Otherwise bounds must be an object with width and
          * height attributes.
          */
+    }, {
+        key: 'drawLegend',
         value: function drawLegend() {
-            var bounds = arguments[0] === undefined ? null : arguments[0];
+            var bounds = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
 
             var self = this,
                 steps = self.properties.colors.length,
@@ -541,7 +541,7 @@ var Choropleth = (function (_Geomap) {
                 hBox = bounds.height;
             }
 
-            var wRect = wBox / (wFactor * 0.75),
+            var wRect = wBox / (wFactor * .75),
                 hLegend = hBox - hBox / (hFactor * 1.8),
                 offsetText = wRect / 2,
                 offsetY = self.properties.height - hBox,
