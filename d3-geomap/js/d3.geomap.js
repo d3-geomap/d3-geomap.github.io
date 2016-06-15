@@ -471,6 +471,11 @@ var Choropleth = (function (_Geomap) {
             _get(Object.getPrototypeOf(Choropleth.prototype), 'draw', this).call(this, selection, self);
         }
     }, {
+        key: 'defined',
+        value: function defined(val) {
+            return !(isNaN(val) || 'undefined' === typeof val || '' === val);
+        }
+    }, {
         key: 'update',
         value: function update() {
             var self = this;
@@ -482,20 +487,21 @@ var Choropleth = (function (_Geomap) {
 
             // Add new fill styles based on data values.
             self.data.forEach(function (d) {
-                var uid = d[self.properties.unitId],
-                    val = d[self.properties.column],
-                    fill = self.colorScale(val);
+                var uid = d[self.properties.unitId].trim(),
+                    val = d[self.properties.column].trim();
 
                 // selectAll must be called and not just select, otherwise the data
                 // attribute of the selected path object is overwritten with self.data.
                 var unit = self.svg.selectAll('.' + self.properties.unitPrefix + '' + uid);
 
-                // Data can contain values for non existing units.
-                if (!unit.empty()) {
+                // Data can contain values for non existing units and values can be empty or NaN.
+                if (!unit.empty() && self.defined(val)) {
+                    var fill = self.colorScale(val),
+                        text = self.properties.unitTitle(unit.datum());
+
                     if (self.properties.duration) unit.transition().duration(self.properties.duration).style('fill', fill);else unit.style('fill', fill);
 
                     // New title with column and value.
-                    var text = self.properties.unitTitle(unit.datum());
                     val = self.properties.format(val);
                     unit.select('title').text('' + text + '\n\n' + self.properties.column + ': ' + val);
                 }

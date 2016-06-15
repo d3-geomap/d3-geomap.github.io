@@ -2,4 +2,5 @@ Country,1800,1801,1802
 AGO,0,0,0
 ARG,0,0,1
 AUS,0,0,0
-AUT,NaN,0,0
+AUT,,0,0
+ESP,NaN,0,0
