@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,17 +13,17 @@
     <link rel="shortcut icon" href="/img/d3-geomap-logo.png">
     <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/rss.xml">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css" rel="stylesheet">
-    <link href="/css/style.css#v=1" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-<link href="/d3-geomap/css/d3.geomap.css#v=#v=1" rel="stylesheet">
+<link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
 
         
     
@@ -48,7 +47,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="/docs/map-properties/">Map Properties</a></li>
-                    <li><a href="/docs/creating-topojson-files/">Creating TopoJSON Files</a></li>
+                    <li><a href="/docs/topojson-files/">TopoJSON Files</a></li>
                     <li><a href="/docs/references/">References</a></li>
                     <li><a href="/docs/changes/">Changelog</a></li>
                 </ul>
@@ -68,11 +67,11 @@
                   </ul>
               </li>
               <li><a href="https://github.com/yaph/d3-geomap">Project Repo</a></li>
-              <li><a href="http://maps.ramiro.org/">Map Showcase</a></li>
+              <li><a href="http://ramiro.org/maps/">Map Showcase</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-1.0.2.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
@@ -95,14 +94,14 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <h1>Choropleth Map: World</h1>
-        <div><p>This example shows how to create a choropleth world map with <code>d3.geomap.choropleth</code>. This example displays world population data from downloaded from the <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
-<p>You can set various properties of the map when instantiating a map object. First specify the topojson file to load, then set the color scheme, choose the <code>YR2010</code> column as the one to display, set the format according to the <code>format</code> function defined first, display a legend, and set the unitId to <code>Country Code</code>. Let's go into more details about the individual settings.</p>
+        <div><p>This example shows how to create a choropleth world map with <code>d3.geomap.choropleth</code>. It displays world population data downloaded from the <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
+<p>You can set various properties of the map when instantiating a map object. First specify the TopoJSON file to load, then set the color scheme, choose the <code>YR2010</code> column as the one to display, set the format according to the <code>format</code> function defined first, display a legend, and set the unitId to <code>iso3</code>. Let's go into more details about the individual settings.</p>
 <p>d3.geomap comes with support for color schemes from the <a href="http://colorbrewer2.org/">ColorBrewer project</a>. We choose the sequential multi-hue scheme Yellow - Green - Blue appropriate for the population data displayed and for best accuracy the maximum number of bins for sequential schemes from ColorBrewer, which is 9.</p>
 <p>The value in the call to the <code>column</code> method specifies which column of the CSV file to display on the map based on the header row in the CSV. <code>d3.geomap.choropleth</code> requires this header row to be present.</p>
 <p>The <code>format</code> function defines how to format values in the map legend and in tooltips when moving the mouse over a country.</p>
 <p>The <code>legend</code> can currently be set to <code>true</code> and <code>false</code>. If <code>true</code> it will look like the one in the example. If you don't want to display a legend or prefer another type of legend you have to set <code>legend</code> to <code>false</code> and draw your own.</p>
-<p>Finally the <code>unitId</code> specifies which column in the CSV file contains the ID values of the geographic units displayed on the map. In this case the units are countries and the ID is the 3 letter <code>Country Code</code> defined in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 Alpha 3</a>. This is the same ID as used in the topojson file. If you use a different topojson file with another code, e. g. the ISO 2 code, you need to make sure to include this in the CSV and set the <code>unitId</code> accordingly.</p>
-<p>After setting up the map, we need to load the CSV file, select the div with the id <code>map</code> set the selection <code>datum</code> to the loaded CSV and call the <code>map.draw</code> method defined in d3-geomap. You have to provide the <code>map</code> object itself as the 2nd argument to <code>call</code>.</p>
+<p>Finally the <code>unitId</code> specifies which column in the CSV file contains the ID values of the geographic units displayed on the map. In this case the units are countries and the ID is in the column <code>iso3</code>, the 3 letter country code defined in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 Alpha 3</a>. This is the same ID as used in the TopoJSON properties. If you use a custom TopoJSON file with another code, e. g. the ISO 2 code, you need to make sure to include this in the CSV and set the <code>unitId</code> accordingly.</p>
+<p>After setting up the map, we need to load the CSV file. We select the <code>map</code> container and pass the loaded data to the selection's <code>datum</code> function. Then we call the draw function of our map object and pass it the selection.</p>
 <p>See the complete JavaScript code needed to render the map below.</p>
 <pre><code>var format = function(d) {
     d = d / 1000000;
@@ -115,19 +114,18 @@ var map = d3.geomap.choropleth()
     .column(&#39;YR2010&#39;)
     .format(format)
     .legend(true)
-    .unitId(&#39;Country Code&#39;);
+    .unitId(&#39;iso3&#39;);
 
 d3.csv(&#39;/data/sp.pop.totl.csv&#39;, function(error, data) {
-    d3.select(&#39;#map&#39;)
-        .datum(data)
-        .call(map.draw, map);
+    var selection = d3.select(&#39;#map&#39;).datum(data);
+    map.draw(selection);
 });
 </code></pre></div>
         <div id="map"></div>
         
             <h3>Data</h3>
             <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3.geomap.</p>
-            <pre>﻿Series Code,Country Code,YR2004,YR2005,YR2006,YR2007,YR2008,YR2009,YR2010,YR2011,YR2012,YR2013
+            <pre>﻿Series Code,iso3,YR2004,YR2005,YR2006,YR2007,YR2008,YR2009,YR2010,YR2011,YR2012,YR2013
 SP.POP.TOTL,AFG,24018682,24860855,25631282,26349243,27032197,27708187,28397812,29105480,29824536,30551674
 SP.POP.TOTL,ALB,3014579,2992724,2968028,2940880,2912559,2884303,2856673,2829337,2801681,2773620
 SP.POP.TOTL,DZA,33461345,33960903,34507214,35097043,35725377,36383302,37062820,37762962,38481705,39208194
@@ -156,21 +154,21 @@ SP.POP.TOTL,ADO,79060,81223,81877,81292,79969,78659,77907,77865,78360,79218
     <div class="container">
       <hr>
       <footer>
-        <p>CC BY-SA 2015 <a href="http://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
+        <p>© <script>document.write(new Date().getFullYear())</script> <a href="http://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
       </footer>
     </div>
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/script.js#v=1"></script>
+    <script src="/js/script.js"></script>
 
     
-<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js#v=#v=1"></script>
-<script src="/d3-geomap/js/d3.geomap.min.js#v=#v=1"></script>
+<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
+<script src="/d3-geomap/js/d3.geomap.min.js"></script>
 
         
-            <script src="/js/maps/choropleth/world.js#v=1"></script>
+            <script src="/js/maps/choropleth/world.js"></script>
         
     
 

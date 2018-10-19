@@ -3,7 +3,7 @@
 <channel><title>Docs</title>
     <link>http://d3-geomap.github.io</link>
     <description>Docs</description>
-    <lastBuildDate>Wed, 15 Jun 2016 21:43:57 </lastBuildDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:41:12 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
@@ -25,9 +25,9 @@
     
     <item>
         <title><![CDATA[Creating TopoJSON Files]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></link>
+        <link><![CDATA[http://d3-geomap.github.io/docs/topojson-files/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/docs/creating-topojson-files/]]></guid>
+        <guid><![CDATA[http://d3-geomap.github.io/docs/topojson-files/]]></guid>
         <pubDate>Fri, 06 Feb 2015 23:34:22 </pubDate>
     </item>
     

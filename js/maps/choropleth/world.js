@@ -9,10 +9,9 @@ var map = d3.geomap.choropleth()
     .column('YR2010')
     .format(format)
     .legend(true)
-    .unitId('Country Code');
+    .unitId('iso3');
 
 d3.csv('/data/sp.pop.totl.csv', function(error, data) {
-    d3.select('#map')
-        .datum(data)
-        .call(map.draw, map);
+    var selection = d3.select('#map').datum(data);
+    map.draw(selection);
 });

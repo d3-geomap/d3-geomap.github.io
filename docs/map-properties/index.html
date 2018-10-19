@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,10 +13,10 @@
     <link rel="shortcut icon" href="/img/d3-geomap-logo.png">
     <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/rss.xml">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css" rel="stylesheet">
-    <link href="/css/style.css#v=1" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,7 +44,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="/docs/map-properties/">Map Properties</a></li>
-                    <li><a href="/docs/creating-topojson-files/">Creating TopoJSON Files</a></li>
+                    <li><a href="/docs/topojson-files/">TopoJSON Files</a></li>
                     <li><a href="/docs/references/">References</a></li>
                     <li><a href="/docs/changes/">Changelog</a></li>
                 </ul>
@@ -65,11 +64,11 @@
                   </ul>
               </li>
               <li><a href="https://github.com/yaph/d3-geomap">Project Repo</a></li>
-              <li><a href="http://maps.ramiro.org/">Map Showcase</a></li>
+              <li><a href="http://ramiro.org/maps/">Map Showcase</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-1.0.2.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
@@ -97,13 +96,13 @@
 <h3>d3.geomap accessors</h3>
 <p>This section documents accessors that can/must be set when a d3.geomap object is created.</p>
 <h4>geofile - required</h4>
-<p>The topojson file loaded to draw the map units, for example countries on a world map.</p>
+<p>The TopoJSON file loaded to draw the map units, for example countries on a world map.</p>
 <h4>height - optional</h4>
 <p>The height of the map. By default will be calculated based on width.</p>
 <h4>postUpdate - optional</h4>
 <p>A function to run when the update process is completed, i. e. the map is rendered. This can be used to draw symbols or provide your own zoom function for example.</p>
 <h4>projection - optional</h4>
-<p>The map projection to be used. Defaults to <code>d3.geo.naturalEarth</code>. Can be selected from <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
+<p>The map projection to be used. Defaults to <code>d3.geoNaturalEarth</code>. Can be selected from <a href="https://github.com/d3/d3-geo/blob/master/README.md#projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
 <h4>rotate - optional</h4>
 <p>The rotation of the map. Defaults to <code>[0, 0, 0]</code>, i. e. the rotation you are most likely to expect.</p>
 <h4>scale - optional</h4>
@@ -117,14 +116,14 @@
 <h4>units - optional</h4>
 <p>The name of the <code>topojson.objects</code> property that contains the geographic units to display on the map.</p>
 <h4>unitTitle - optional</h4>
-<p>A function that receives the topojson feature object for the corresponding map unit, when the mouse is moved over it. The return value of this functions is the text shown in the standard browser tooltip. Defaults to <code>(d) =&gt; d.properties.name</code>.</p>
+<p>A function that receives the TopoJSON feature object for the corresponding map unit, when the mouse is moved over it. The return value of this functions is the text shown in the standard browser tooltip. Defaults to <code>(d) =&gt; d.properties.name</code>.</p>
 <h4>width - optional</h4>
 <p>The width of the map. By default will be set to the width of the containing element, i. e. the element passed to the selection.</p>
 <h4>zoomFactor - optional</h4>
 <p>The zoom factor to use when a map unit is clicked. Defaults to 4.</p>
 <h3>d3.geomap attributes</h3>
 <h4>geo</h4>
-<p>The loaded topojson data, which gets assigned during the draw method.</p>
+<p>The loaded TopoJSON data, which gets assigned during the draw method.</p>
 <h4>svg</h4>
 <p>The <a href="https://github.com/mbostock/d3/wiki/Selections">d3.selection</a> for the map object.</p>
 <h3>d3.geomap.choropleth accesors</h3>
@@ -159,14 +158,14 @@
     <div class="container">
       <hr>
       <footer>
-        <p>CC BY-SA 2015 <a href="http://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
+        <p>© <script>document.write(new Date().getFullYear())</script> <a href="http://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
       </footer>
     </div>
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/script.js#v=1"></script>
+    <script src="/js/script.js"></script>
 
     
         

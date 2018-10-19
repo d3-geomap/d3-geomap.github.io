@@ -4,10 +4,8 @@ var map = d3.geomap.choropleth()
     .column('1800')
     .domain([0, 1])
     .legend(false)
-    .unitId('Country');
+    .unitId('iso3');
 
 d3.csv('/data/custom-domain.csv', function(error, data) {
-    d3.select('#map')
-        .datum(data)
-        .call(map.draw, map);
+    map.draw(d3.select('#map').datum(data));
 });
