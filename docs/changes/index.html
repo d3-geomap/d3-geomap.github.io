@@ -6,7 +6,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>Changelog • d3.geomap Documentation</title>
+    <title>Changelog • d3-geomap Documentation</title>
 
     
 
@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">d3.geomap</a>
+          <a class="navbar-brand" href="/">d3-geomap</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -68,14 +68,12 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
     <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/docs/changes/&text=Changelog" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
     <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/docs/changes/&t=Changelog" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/docs/changes/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
     <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/docs/changes/&title=Changelog" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
     <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/docs/changes/&title=Changelog" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
     <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/docs/changes/&title=Changelog" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
@@ -91,7 +89,20 @@
   <div class="row">
     <div class="col-md-12">
         <h1>Changelog</h1>
-        <div><p>This page lists significant changes introduced in releases of d3.geomap.</p>
+        <div><p>This page lists significant changes introduced in releases of d3-geomap.</p>
+<h2>Changes in Version 3.0.0</h2>
+<p>This release introduces several changes that are backwards incompatible. On the plus side d3-geomap can now be imported via <code>import</code> or <code>require</code> from other npm modules. Many thanks to <a href="https://github.com/dpraul">Dylan Praul</a> for his substantial contributions.</p>
+<ul>
+<li>Provide a built version that other npm modules can consume with <code>import</code> or <code>require</code>.</li>
+<li>Rename <code>d3.geomap.choropleth</code> to <code>d3.choropleth</code>.</li>
+<li>Refer to the package as <code>d3-geomap</code> and to the JavaScript object as <code>d3.geomap</code>.</li>
+<li>Remove the <code>colorbrewer</code> object, which provided color scales. Instead <code>d3-scale-chromatic</code>, which is included in D3, can be used.</li>
+<li>The <code>d3-geomap</code> CSS class must be added to map elements for default styling.</li>
+<li>The TopoJSON files included in the distribution are now built from <a href="https://github.com/nvkelso/natural-earth-vector">Natural Earth Vector</a> version 4.1.0</li>
+<li>The downloadable zip bundle does not include the dependencies any more.</li>
+<li>The Rollup module bundler is now used for building the distribution.</li>
+<li>Upgrade to D3 version 5.</li>
+</ul>
 <h2>Changes in Version 2.0.0</h2>
 <ul>
 <li>The <code>draw</code> function now only accepts a single argument, the map selection.</li>

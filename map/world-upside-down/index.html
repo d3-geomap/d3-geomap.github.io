@@ -6,7 +6,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>World Upside Down • d3.geomap</title>
+    <title>World Upside Down • d3-geomap</title>
 
     
 
@@ -23,7 +23,7 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-<link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+<link href="/d3-geomap/d3-geomap.min.css" rel="stylesheet">
 
         
     
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">d3.geomap</a>
+          <a class="navbar-brand" href="/">d3-geomap</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,14 +71,12 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
     <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/map/world-upside-down/&text=World%20Upside%20Down" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
     <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/map/world-upside-down/&t=World%20Upside%20Down" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/map/world-upside-down/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
     <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/map/world-upside-down/&title=World%20Upside%20Down" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
     <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/map/world-upside-down/&title=World%20Upside%20Down" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
     <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/map/world-upside-down/&title=World%20Upside%20Down" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
@@ -94,14 +92,14 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <h1>World Upside Down</h1>
-        <div><p>This example shows how to create a rotated world map with <code>d3.geomap</code>.</p>
+        <div><p>This example shows how to create a rotated world map with d3-geomap.</p>
 <p>See the complete JavaScript code needed to render the map below.</p>
 <pre><code>var map = d3.geomap()
     .geofile(&#39;/d3-geomap/topojson/world/countries.json&#39;)
     .rotate([0, 0, 180])
     .draw(d3.select(&#39;#map&#39;));
 </code></pre></div>
-        <div id="map"></div>
+        <div id="map" class="d3-geomap"></div>
         
         <hr>
         <h3>Example Maps</h3>
@@ -134,8 +132,9 @@
     <script src="/js/script.js"></script>
 
     
-<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
-<script src="/d3-geomap/js/d3.geomap.min.js"></script>
+<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="/d3-geomap/d3-geomap.min.js"></script>
 
         
             <script src="/js/maps/world-upside-down.js"></script>

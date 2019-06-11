@@ -6,7 +6,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>Choropleth Map: World • d3.geomap</title>
+    <title>Choropleth Map: World • d3-geomap</title>
 
     
 
@@ -23,7 +23,7 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-<link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+<link href="/d3-geomap/d3-geomap.min.css" rel="stylesheet">
 
         
     
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">d3.geomap</a>
+          <a class="navbar-brand" href="/">d3-geomap</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,14 +71,12 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
     <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/world/&text=Choropleth%20Map%3A%20World" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
     <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/map/choropleth/world/&t=Choropleth%20Map%3A%20World" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/world/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
     <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/map/choropleth/world/&title=Choropleth%20Map%3A%20World" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
     <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/world/&title=Choropleth%20Map%3A%20World" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
     <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/world/&title=Choropleth%20Map%3A%20World" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
@@ -94,12 +92,10 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <h1>Choropleth Map: World</h1>
-        <div><p>This example shows how to create a choropleth world map with <code>d3.geomap.choropleth</code>. It displays world population data downloaded from the <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
+        <div><p>This example shows how to create a choropleth world map with <code>d3.choropleth</code>. It displays world population data downloaded from the <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
 <p>You can set various properties of the map when instantiating a map object. First specify the TopoJSON file to load, then set the color scheme, choose the <code>YR2010</code> column as the one to display, set the format according to the <code>format</code> function defined first, display a legend, and set the unitId to <code>iso3</code>. Let's go into more details about the individual settings.</p>
-<p>d3.geomap comes with support for color schemes from the <a href="http://colorbrewer2.org/">ColorBrewer project</a>. We choose the sequential multi-hue scheme Yellow - Green - Blue appropriate for the population data displayed and for best accuracy the maximum number of bins for sequential schemes from ColorBrewer, which is 9.</p>
-<p>The value in the call to the <code>column</code> method specifies which column of the CSV file to display on the map based on the header row in the CSV. <code>d3.geomap.choropleth</code> requires this header row to be present.</p>
-<p>The <code>format</code> function defines how to format values in the map legend and in tooltips when moving the mouse over a country.</p>
-<p>The <code>legend</code> can currently be set to <code>true</code> and <code>false</code>. If <code>true</code> it will look like the one in the example. If you don't want to display a legend or prefer another type of legend you have to set <code>legend</code> to <code>false</code> and draw your own.</p>
+<p>We set a sequential multi-hue (Yellow - Green - Blue) color scale with 9 bins for the population data displayed. The value in the call to the <code>column</code> method specifies which column of the CSV file to display on the map based on the header row in the CSV. <code>d3.choropleth</code> requires this header row to be present.</p>
+<p>The <code>format</code> function defines how to format values in the map legend and in tooltips when moving the mouse over a country. The <code>legend</code> can currently be set to <code>true</code> and <code>false</code>. If <code>true</code> it will look like the one in the example. If you don't want to display a legend or prefer another type of legend you have to set <code>legend</code> to <code>false</code> and draw your own.</p>
 <p>Finally the <code>unitId</code> specifies which column in the CSV file contains the ID values of the geographic units displayed on the map. In this case the units are countries and the ID is in the column <code>iso3</code>, the 3 letter country code defined in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 Alpha 3</a>. This is the same ID as used in the TopoJSON properties. If you use a custom TopoJSON file with another code, e. g. the ISO 2 code, you need to make sure to include this in the CSV and set the <code>unitId</code> accordingly.</p>
 <p>After setting up the map, we need to load the CSV file. We select the <code>map</code> container and pass the loaded data to the selection's <code>datum</code> function. Then we call the draw function of our map object and pass it the selection.</p>
 <p>See the complete JavaScript code needed to render the map below.</p>
@@ -108,23 +104,23 @@
     return d3.format(&#39;,.02f&#39;)(d) + &#39;M&#39;;
 }
 
-var map = d3.geomap.choropleth()
+var map = d3.choropleth()
     .geofile(&#39;/d3-geomap/topojson/world/countries.json&#39;)
-    .colors(colorbrewer.YlGnBu[9])
+    .colors(d3.schemeYlGnBu[9])
     .column(&#39;YR2010&#39;)
     .format(format)
     .legend(true)
     .unitId(&#39;iso3&#39;);
 
-d3.csv(&#39;/data/sp.pop.totl.csv&#39;, function(error, data) {
+d3.csv(&#39;/data/sp.pop.totl.csv&#39;).then(data =&gt; {
     var selection = d3.select(&#39;#map&#39;).datum(data);
     map.draw(selection);
 });
 </code></pre></div>
-        <div id="map"></div>
+        <div id="map" class="d3-geomap"></div>
         
             <h3>Data</h3>
-            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3.geomap.</p>
+            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3-geomap.</p>
             <pre>﻿Series Code,iso3,YR2004,YR2005,YR2006,YR2007,YR2008,YR2009,YR2010,YR2011,YR2012,YR2013
 SP.POP.TOTL,AFG,24018682,24860855,25631282,26349243,27032197,27708187,28397812,29105480,29824536,30551674
 SP.POP.TOTL,ALB,3014579,2992724,2968028,2940880,2912559,2884303,2856673,2829337,2801681,2773620
@@ -164,8 +160,9 @@ SP.POP.TOTL,ADO,79060,81223,81877,81292,79969,78659,77907,77865,78360,79218
     <script src="/js/script.js"></script>
 
     
-<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
-<script src="/d3-geomap/js/d3.geomap.min.js"></script>
+<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="/d3-geomap/d3-geomap.min.js"></script>
 
         
             <script src="/js/maps/choropleth/world.js"></script>

@@ -6,7 +6,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>Choropleth Map: US States • d3.geomap</title>
+    <title>Choropleth Map: US States • d3-geomap</title>
 
     
 
@@ -23,7 +23,7 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-<link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+<link href="/d3-geomap/d3-geomap.min.css" rel="stylesheet">
 
         
     
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">d3.geomap</a>
+          <a class="navbar-brand" href="/">d3-geomap</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,14 +71,12 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
     <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&text=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
     <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/map/choropleth/us-states/&t=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
     <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
     <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
     <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/map/choropleth/us-states/&title=Choropleth%20Map%3A%20US%20States" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
@@ -98,7 +96,7 @@
 <p>I'll only explain the differences to the example <a href="/map/choropleth/world/">choropleth map of the world</a>, where you can learn about the meaning of the other settings.</p>
 <p>Since this is a map of the US, we load the appropriate TopoJSON file and set the map object to use the <code>d3.geoAlbersUsa</code> projection. The <code>unitId</code> used in this TopoJSON source is the <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code">FIPS code</a>. Since we don't use the default projection (<code>d3.geoNaturalEarth</code>) we need to set the <code>scale</code> so the map fits well into the layout, in this case <code>1000</code> is a good value.</p>
 <p>The remaining code should be straight-forward, provided you read the explanation of the <a href="/map/choropleth/world/">choropleth world map example</a>.</p>
-<pre><code>var map = d3.geomap.choropleth()
+<pre><code>var map = d3.choropleth()
     .geofile(&#39;/d3-geomap/topojson/countries/USA.json&#39;)
     .projection(d3.geoAlbersUsa)
     .column(&#39;2012&#39;)
@@ -106,14 +104,14 @@
     .scale(1000)
     .legend(true);
 
-d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
+d3.csv(&#39;/data/venture-capital.csv&#39;).then(data =&gt; {
     map.draw(d3.select(&#39;#map&#39;).datum(data));
 });
 </code></pre></div>
-        <div id="map"></div>
+        <div id="map" class="d3-geomap"></div>
         
             <h3>Data</h3>
-            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3.geomap.</p>
+            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3-geomap.</p>
             <pre>,State,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,fips
 0,Alabama,0.77,0.59,2.3,0.67,0.46,0.23,0.27,0.13,0.12,0.19,0.14,0.26,0.0,0.02,0.13,US01
 1,Alaska,0.0,0.0,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,US02
@@ -153,8 +151,9 @@ d3.csv(&#39;/data/venture-capital.csv&#39;, function(error, data) {
     <script src="/js/script.js"></script>
 
     
-<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
-<script src="/d3-geomap/js/d3.geomap.min.js"></script>
+<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="/d3-geomap/d3-geomap.min.js"></script>
 
         
             <script src="/js/maps/choropleth/us-states.js"></script>

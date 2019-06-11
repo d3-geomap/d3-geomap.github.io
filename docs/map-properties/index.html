@@ -6,7 +6,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>Map Properties - Accessors and Attributes • d3.geomap Documentation</title>
+    <title>Map Properties - Accessors and Attributes • d3-geomap Documentation</title>
 
     
 
@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">d3.geomap</a>
+          <a class="navbar-brand" href="/">d3-geomap</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -68,14 +68,12 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
     <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/docs/map-properties/&text=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
     <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/docs/map-properties/&t=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/docs/map-properties/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
     <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
     <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
     <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/docs/map-properties/&title=Map%20Properties%20-%20Accessors%20and%20Attributes" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
@@ -94,7 +92,7 @@
         <div><p>Maps can be customized through the accessors documented here. If an accessor is called with a value the value will be set and the map object returned. If called without an argument the current value of the corresponding property will be returned.</p>
 <p>In addition map properties can be accessed via attributes to allow for customizations beyond the capabilities of this library.</p>
 <h3>d3.geomap accessors</h3>
-<p>This section documents accessors that can/must be set when a d3.geomap object is created.</p>
+<p>This section documents accessors that can/must be set when a <code>d3.geomap</code> object is created.</p>
 <h4>geofile - required</h4>
 <p>The TopoJSON file loaded to draw the map units, for example countries on a world map.</p>
 <h4>height - optional</h4>
@@ -102,7 +100,7 @@
 <h4>postUpdate - optional</h4>
 <p>A function to run when the update process is completed, i. e. the map is rendered. This can be used to draw symbols or provide your own zoom function for example.</p>
 <h4>projection - optional</h4>
-<p>The map projection to be used. Defaults to <code>d3.geoNaturalEarth</code>. Can be selected from <a href="https://github.com/d3/d3-geo/blob/master/README.md#projections">core d3</a> and extended <a href="https://github.com/d3/d3-geo-projection">d3 geo projections</a>.</p>
+<p>The map projection to be used. Defaults to <code>d3.geoNaturalEarth</code>. Other projections to use can be found in the <a href="https://github.com/d3/d3-geo/blob/master/README.md#projections">d3-geo</a> and <a href="https://github.com/d3/d3-geo-projection">d3-geo-projection</a> packages.</p>
 <h4>rotate - optional</h4>
 <p>The rotation of the map. Defaults to <code>[0, 0, 0]</code>, i. e. the rotation you are most likely to expect.</p>
 <h4>scale - optional</h4>
@@ -125,13 +123,13 @@
 <h4>geo</h4>
 <p>The loaded TopoJSON data, which gets assigned during the draw method.</p>
 <h4>svg</h4>
-<p>The <a href="https://github.com/mbostock/d3/wiki/Selections">d3.selection</a> for the map object.</p>
-<h3>d3.geomap.choropleth accesors</h3>
-<p>In addition to the accessors from d3.geomap, d3.geomap.choropleth objects provide the accessors listed below..</p>
+<p>The <a href="https://github.com/d3/d3-selection">d3-selection</a> for the map object.</p>
+<h3>d3.choropleth accessors</h3>
+<p>In addition to the accessors from <code>d3.geomap</code>, <code>d3.choropleth</code> objects provide the accessors listed below..</p>
 <h4>column - required</h4>
-<p>The column from the CSV file that contains the values to be displayed on the map. You provide the appropriate column heading as a string value to the column method.</p>
+<p>The column from the CSV file that contains the values to be displayed on the map. You provide the appropriate column heading as a string value to the <code>column</code> method.</p>
 <h4>colors - optional</h4>
-<p>An array of color values. You can use <a href="http://colorbrewer2.org/">color brewer</a> schemes available via the <code>colorbrewer</code> object, e. g. <code>colorbrewer.OrRd[9]</code> for a sequential orange-red scheme with 9 different color values, which is the default.</p>
+<p>An array of color values. A sequential orange-red scheme with 9 different color values is set by default. The <a href="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</a> package provides many other color scales you can use.</p>
 <h4>domain - optional</h4>
 <p>Specify the array of values used to determine appropriate color values. Defaults to the extent of values from the data series set via the <code>column</code> accessor.</p>
 <h4>format - optional</h4>
@@ -142,8 +140,8 @@
 <h4>duration - optional</h4>
 <p>If set countries will be colored using a transition of the specified duration in milliseconds. Defaults to <code>null</code>, i. e. no transition animation.</p>
 <h4>valueScale - optional</h4>
-<p>The D3 scale function to use to determine colors based on the domain, i. e. the input values, and the color range. Defaults to <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize">d3.scale.quantize</a>.</p>
-<h3>d3.geomap.choropleth attributes</h3>
+<p>The D3 scale function to use to determine colors based on the domain, i. e. the input values, and the color range. Defaults to <a href="https://github.com/d3/d3-scale#quantize-scales">d3.scaleQuantize</a>.</p>
+<h3>d3.choropleth attributes</h3>
 <h4>data</h4>
 <p>The data object created from the loaded CSV file.</p>
 <h4>colorScale</h4>

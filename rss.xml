@@ -3,7 +3,7 @@
 <channel><title>RSS Feed</title>
     <link>http://d3-geomap.github.io</link>
     <description>RSS Feed</description>
-    <lastBuildDate>Sat, 20 Oct 2018 00:41:12 </lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 21:50:00 </lastBuildDate>
     <generator>Logya</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     
@@ -72,7 +72,7 @@
     </item>
     
     <item>
-        <title><![CDATA[d3.geomap - Create Geographic Maps for the Web]]></title>
+        <title><![CDATA[d3-geomap - Create Geographic Maps for the Web]]></title>
         <link><![CDATA[http://d3-geomap.github.io/]]></link>
         <description><![CDATA[]]></description>
         <guid><![CDATA[http://d3-geomap.github.io/]]></guid>

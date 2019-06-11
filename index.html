@@ -6,7 +6,7 @@
     
     <meta name="author" content="Ramiro Gómez">
 
-    <title>d3.geomap - Create Geographic Maps for the Web</title>
+    <title>d3-geomap - Create Geographic Maps for the Web</title>
 
     
 
@@ -23,7 +23,7 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-<link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+<link href="/d3-geomap/d3-geomap.min.css" rel="stylesheet">
 
         
     
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">d3.geomap</a>
+          <a class="navbar-brand" href="/">d3-geomap</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,17 +71,15 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap-2.0.0.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
+  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
-    <li><a href="https://flattr.com/submit/auto?user_id=rg&url=https%3A%2F%2Fgithub.com%2Fyaph%2Fd3-geomap" class="btn btn-default"><i class="fa fa-heart"></i> Flattr this</a>
-    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/&text=d3.geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
-    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/&t=d3.geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
-    <li><a rel="nofollow" href="https://plus.google.com/share?url=http%3A//d3-geomap.github.io/" class="btn btn-default"><i class="fa fa-google-plus"></i> Google+</a></li>
-    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/&title=d3.geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/&title=d3.geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
-    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/&title=d3.geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
+    <li><a rel="nofollow" href="https://twitter.com/share?url=http%3A//d3-geomap.github.io/&text=d3-geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A//d3-geomap.github.io/&t=d3-geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A//d3-geomap.github.io/&title=d3-geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    <li><a rel="nofollow" href="http://reddit.com/submit?url=http%3A//d3-geomap.github.io/&title=d3-geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-share"></i> Reddit</a></li>
+    <li><a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http%3A//d3-geomap.github.io/&title=d3-geomap%20-%20Create%20Geographic%20Maps%20for%20the%20Web" class="btn btn-default"><i class="fa fa-share"></i> Stumble</a></li>
   </ul>
 </li>
 </ul>
@@ -93,8 +91,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-        <h1>d3.geomap - Create Geographic Maps for the Web</h1>
-        <div><p>d3.geomap is a library for creating geographic maps that are rendered in a Web browser. d3.geomap is written in JavaScript using features introduced in EcmaScript 6 and later and built on top of D3.js.</p>
+        <h1>d3-geomap - Create Geographic Maps for the Web</h1>
+        <div><p><strong>d3-geomap</strong> is a library for creating geographic maps that are rendered in a Web browser. d3-geomap is written in JavaScript using features introduced in EcmaScript 6 and later and built on top of D3.js.</p>
 <h2>Quickstart</h2>
 <p>Set the charset of your document to <code>utf-8</code> right at the beginning of the HTML head section, then include the downloaded dependencies, and in the body create a <code>div</code> with the id <code>map</code>.</p>
 <p>Setting the charset to <code>utf-8</code> is <strong>mandatory</strong>, because d3, d3-geo-projection and several of the TopoJSON files contain characters that may not work with the default encoding otherwise set by the browser.</p>
@@ -102,22 +100,23 @@
 <pre><code>&lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&#34;utf-8&#34;&gt;
-        &lt;link href=&#34;/d3-geomap/css/d3.geomap.css&#34; rel=&#34;stylesheet&#34;&gt;
-        &lt;script src=&#34;/d3-geomap/vendor/d3.geomap.dependencies.min.js&#34;&gt;&lt;/script&gt;
-        &lt;script src=&#34;/d3-geomap/js/d3.geomap.min.js&#34;&gt;&lt;/script&gt;
+        &lt;link href=&#34;/d3-geomap/d3-geomap.css&#34; rel=&#34;stylesheet&#34;&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&#34;map&#34;&gt;&lt;/div&gt;
     &lt;/body&gt;
+    &lt;script src=&#34;//unpkg.com/d3@5.9.2/dist/d3.min.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;//unpkg.com/topojson@3.0.2/dist/topojson.min.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;/d3-geomap/d3-geomap.min.js&#34;&gt;&lt;/script&gt;
 &lt;/html&gt;
 </code></pre>
-<p>The JavaScript code you still need to write to create a plain world map, that can be zoomed by clicking on countries looks as follows.</p>
+<p>The JavaScript code you still need to write to create a plain world map, that can be zoomed by clicking on countries, looks as follows.</p>
 <pre><code>var map = d3.geomap()
     .geofile(&#39;/d3-geomap/topojson/world/countries.json&#39;)
     .draw(d3.select(&#39;#map&#39;));
 </code></pre>
 <p>Either add the above code between <code>script</code> tags after including the dependencies or put it in an external JavaScript file (recommended) and include that. See the map created with this code rendered below. Click on a country to zoom the map.</p></div>
-        <div id="map"></div>
+        <div id="map" class="d3-geomap"></div>
         
         <hr>
         <h3>Example Maps</h3>
@@ -150,8 +149,9 @@
     <script src="/js/script.js"></script>
 
     
-<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
-<script src="/d3-geomap/js/d3.geomap.min.js"></script>
+<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="/d3-geomap/d3-geomap.min.js"></script>
 
         
             <script src="/js/maps/world-plain.js"></script>

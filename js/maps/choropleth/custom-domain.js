@@ -1,4 +1,4 @@
-var map = d3.geomap.choropleth()
+var map = d3.choropleth()
     .geofile('/d3-geomap/topojson/world/countries.json')
     .colors(['green','red'])
     .column('1800')
@@ -6,6 +6,6 @@ var map = d3.geomap.choropleth()
     .legend(false)
     .unitId('iso3');
 
-d3.csv('/data/custom-domain.csv', function(error, data) {
+d3.csv('/data/custom-domain.csv').then(data => {
     map.draw(d3.select('#map').datum(data));
 });
