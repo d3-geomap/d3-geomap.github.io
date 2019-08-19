@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
 <channel><title>Map » Choropleth</title>
-    <link>http://d3-geomap.github.io</link>
+    <link>https://d3-geomap.github.io</link>
     <description>Map » Choropleth</description>
-    <lastBuildDate>Sun, 18 Aug 2019 02:02:34 </lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 00:28:55 </lastBuildDate>
     <generator>Logya</generator>
-    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     
     <item>
         <title><![CDATA[Choropleth Map with Custom Data Domain]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/custom-domain/]]></link>
+        <link><![CDATA[https://d3-geomap.github.io/map/choropleth/custom-domain/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/custom-domain/]]></guid>
+        <guid><![CDATA[https://d3-geomap.github.io/map/choropleth/custom-domain/]]></guid>
         <pubDate>Wed, 15 Jun 2016 12:24:16 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Choropleth Map: US States]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></link>
+        <link><![CDATA[https://d3-geomap.github.io/map/choropleth/us-states/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/us-states/]]></guid>
+        <guid><![CDATA[https://d3-geomap.github.io/map/choropleth/us-states/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:55:22 </pubDate>
     </item>
     
     <item>
         <title><![CDATA[Choropleth Map: World]]></title>
-        <link><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></link>
+        <link><![CDATA[https://d3-geomap.github.io/map/choropleth/world/]]></link>
         <description><![CDATA[]]></description>
-        <guid><![CDATA[http://d3-geomap.github.io/map/choropleth/world/]]></guid>
+        <guid><![CDATA[https://d3-geomap.github.io/map/choropleth/world/]]></guid>
         <pubDate>Wed, 23 Jul 2014 23:06:22 </pubDate>
     </item>
     
