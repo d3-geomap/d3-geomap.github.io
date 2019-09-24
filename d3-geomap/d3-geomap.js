@@ -120,7 +120,19 @@ function () {
 
     // Set default properties optimized for naturalEarth projection.
     this.properties = {
+      /**
+       * URL to TopoJSON file to load when geomap is drawn. Ignored if geoData is specified.
+       *
+       * @type {string|null}
+       */
       geofile: null,
+
+      /**
+       * Contents of TopoJSON file. If specified, geofile is ignored.
+       *
+       * @type {Promise<object>|object|null}
+       */
+      geoData: null,
       height: null,
       postUpdate: null,
       projection: d3Geo.geoNaturalEarth1,
@@ -195,12 +207,23 @@ function () {
 
       if (proj.hasOwnProperty('rotate') && self.properties.rotate) proj.rotate(self.properties.rotate);
       self.path = d3Geo.geoPath().projection(proj);
-      d3Fetch.json(self.properties.geofile).then(function (geo) {
+
+      var drawGeoData = function drawGeoData(geo) {
         self.geo = geo;
         self.svg.append('g').attr('class', 'units zoom').selectAll('path').data(topojson.feature(geo, geo.objects[self.properties.units]).features).enter().append('path').attr('class', function (d) {
           return "unit ".concat(self.properties.unitPrefix).concat(d.properties[self.properties.unitId]);
         }).attr('d', self.path).on('click', self.clicked.bind(self)).append('title').text(self.properties.unitTitle);
         self.update();
+      };
+
+      Promise.resolve().then(function () {
+        if (self.properties.geoData) {
+          return self.properties.geoData;
+        }
+
+        return d3Fetch.json(self.properties.geofile);
+      }).then(function (geo) {
+        return drawGeoData(geo);
       });
     }
   }, {

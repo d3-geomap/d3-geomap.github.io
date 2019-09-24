@@ -93,8 +93,10 @@
 <p>In addition map properties can be accessed via attributes to allow for customizations beyond the capabilities of this library.</p>
 <h3>d3.geomap accessors</h3>
 <p>This section documents accessors that can/must be set when a <code>d3.geomap</code> object is created.</p>
-<h4>geofile - required</h4>
-<p>The TopoJSON file loaded to draw the map units, for example countries on a world map.</p>
+<h4>geofile - required if geoData is not set</h4>
+<p>The TopoJSON file to load for drawing the map units, for example countries on a world map.</p>
+<h4>geoData - required if geofile is not set</h4>
+<p>The content of a TopoJSON file that was already loaded. This is useful for creating multiple maps on one page for example.</p>
 <h4>height - optional</h4>
 <p>The height of the map. By default will be calculated based on width.</p>
 <h4>postUpdate - optional</h4>
