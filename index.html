@@ -89,14 +89,11 @@
 
     
 <div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-lg-offset-1">
+
         <h1>d3-geomap - Create Geographic Maps for the Web</h1>
         <div><p><strong>d3-geomap</strong> is a library for creating geographic maps that are rendered in a Web browser. d3-geomap is written in JavaScript using features introduced in EcmaScript 6 and later and built on top of D3.js.</p>
 <h2>Quickstart</h2>
-<p>Set the charset of your document to <code>utf-8</code> right at the beginning of the HTML head section, then include the downloaded dependencies, and in the body create a <code>div</code> with the id <code>map</code>.</p>
-<p>Setting the charset to <code>utf-8</code> is <strong>mandatory</strong>, because d3, d3-geo-projection and several of the TopoJSON files contain characters that may not work with the default encoding otherwise set by the browser.</p>
-<p>In the other examples on this site inclusion of this code is assumed and not repeated on every page.</p>
+<p>Set the charset of your document to <code>utf-8</code> right at the beginning of the HTML head section, then include the downloaded dependencies, and in the body create a <code>div</code> with the id <code>map</code>. Setting the charset to <code>utf-8</code> must be done to ensure that the referenced dependencies and data files don't cause encoding issues in the browser. In the other examples on this site inclusion of this code is assumed and not repeated on every page.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&#34;utf-8&#34;&gt;
@@ -132,8 +129,7 @@
         <li><a href="/map/choropleth/custom-domain/">Choropleth Map with Custom Data Domain</a></li>
     
 </ul>
-    </div>
-  </div>
+
 </div>
 
 

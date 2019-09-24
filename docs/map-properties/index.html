@@ -91,64 +91,64 @@
         <h1>Map Properties - Accessors and Attributes</h1>
         <div><p>Maps can be customized through the accessors documented here. If an accessor is called with a value the value will be set and the map object returned. If called without an argument the current value of the corresponding property will be returned.</p>
 <p>In addition map properties can be accessed via attributes to allow for customizations beyond the capabilities of this library.</p>
-<h3>d3.geomap accessors</h3>
+<h2>d3.geomap accessors</h2>
 <p>This section documents accessors that can/must be set when a <code>d3.geomap</code> object is created.</p>
-<h4>geofile - required if geoData is not set</h4>
+<h3>geofile - required if geoData is not set</h3>
 <p>The TopoJSON file to load for drawing the map units, for example countries on a world map.</p>
-<h4>geoData - required if geofile is not set</h4>
+<h3>geoData - required if geofile is not set</h3>
 <p>The content of a TopoJSON file that was already loaded. This is useful for creating multiple maps on one page for example.</p>
-<h4>height - optional</h4>
+<h3>height - optional</h3>
 <p>The height of the map. By default will be calculated based on width.</p>
-<h4>postUpdate - optional</h4>
+<h3>postUpdate - optional</h3>
 <p>A function to run when the update process is completed, i. e. the map is rendered. This can be used to draw symbols or provide your own zoom function for example.</p>
-<h4>projection - optional</h4>
+<h3>projection - optional</h3>
 <p>The map projection to be used. Defaults to <code>d3.geoNaturalEarth</code>. Other projections to use can be found in the <a href="https://github.com/d3/d3-geo/blob/master/README.md#projections">d3-geo</a> and <a href="https://github.com/d3/d3-geo-projection">d3-geo-projection</a> packages.</p>
-<h4>rotate - optional</h4>
+<h3>rotate - optional</h3>
 <p>The rotation of the map. Defaults to <code>[0, 0, 0]</code>, i. e. the rotation you are most likely to expect.</p>
-<h4>scale - optional</h4>
+<h3>scale - optional</h3>
 <p>A numeric value to set the size of the map. By default will be calculated based on width.</p>
-<h4>translate - optional</h4>
+<h3>translate - optional</h3>
 <p>An array of x and y coordinates in pixels to center the map. By default will be calculated based on width.</p>
-<h4>unitId - optional</h4>
+<h3>unitId - optional</h3>
 <p>A property of the unit that is unique, e. g. the <code>iso3</code> code of a country, which is also the default value.</p>
-<h4>unitPrefix - optional</h4>
+<h3>unitPrefix - optional</h3>
 <p>The value of <code>unitPrefix</code> is used to prefix CSS classes of units. It defaults to <code>unit-</code>, e. g. Spain would get a CSS class of <code>unit-ESP</code>.</p>
-<h4>units - optional</h4>
+<h3>units - optional</h3>
 <p>The name of the <code>topojson.objects</code> property that contains the geographic units to display on the map.</p>
-<h4>unitTitle - optional</h4>
+<h3>unitTitle - optional</h3>
 <p>A function that receives the TopoJSON feature object for the corresponding map unit, when the mouse is moved over it. The return value of this functions is the text shown in the standard browser tooltip. Defaults to <code>(d) =&gt; d.properties.name</code>.</p>
-<h4>width - optional</h4>
+<h3>width - optional</h3>
 <p>The width of the map. By default will be set to the width of the containing element, i. e. the element passed to the selection.</p>
-<h4>zoomFactor - optional</h4>
+<h3>zoomFactor - optional</h3>
 <p>The zoom factor to use when a map unit is clicked. Defaults to 4.</p>
-<h3>d3.geomap attributes</h3>
-<h4>geo</h4>
+<h2>d3.geomap attributes</h2>
+<h3>geo</h3>
 <p>The loaded TopoJSON data, which gets assigned during the draw method.</p>
-<h4>svg</h4>
+<h3>svg</h3>
 <p>The <a href="https://github.com/d3/d3-selection">d3-selection</a> for the map object.</p>
-<h3>d3.choropleth accessors</h3>
+<h2>d3.choropleth accessors</h2>
 <p>In addition to the accessors from <code>d3.geomap</code>, <code>d3.choropleth</code> objects provide the accessors listed below..</p>
-<h4>column - required</h4>
+<h3>column - required</h3>
 <p>The column from the CSV file that contains the values to be displayed on the map. You provide the appropriate column heading as a string value to the <code>column</code> method.</p>
-<h4>colors - optional</h4>
+<h3>colors - optional</h3>
 <p>An array of color values. A sequential orange-red scheme with 9 different color values is set by default. The <a href="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</a> package provides many other color scales you can use.</p>
-<h4>domain - optional</h4>
+<h3>domain - optional</h3>
 <p>Specify the array of values used to determine appropriate color values. Defaults to the extent of values from the data series set via the <code>column</code> accessor.</p>
-<h4>format - optional</h4>
+<h3>format - optional</h3>
 <p>The number format used for values displayed in the legend and in tooltips. Defaults to <code>d3.format(',.02f')</code>.</p>
-<h4>legend - optional</h4>
+<h3>legend - optional</h3>
 <p>Defaults to <code>false</code>, so you can create your own legend by providing the code to draw it as a callback function to the <code>postUpdate</code> method.</p>
 <p>If set to <code>true</code> the built-in legend will be displayed. You can set the width and height of the legend by passing an object with <code>width</code> and <code>height</code> attributes set to numeric values.</p>
-<h4>duration - optional</h4>
+<h3>duration - optional</h3>
 <p>If set countries will be colored using a transition of the specified duration in milliseconds. Defaults to <code>null</code>, i. e. no transition animation.</p>
-<h4>valueScale - optional</h4>
+<h3>valueScale - optional</h3>
 <p>The D3 scale function to use to determine colors based on the domain, i. e. the input values, and the color range. Defaults to <a href="https://github.com/d3/d3-scale#quantize-scales">d3.scaleQuantize</a>.</p>
-<h3>d3.choropleth attributes</h3>
-<h4>data</h4>
+<h2>d3.choropleth attributes</h2>
+<h3>data</h3>
 <p>The data object created from the loaded CSV file.</p>
-<h4>colorScale</h4>
+<h3>colorScale</h3>
 <p>A function that returns the color from the range of colors for the numeric value passed as its argument.</p>
-<h4>extent</h4>
+<h3>extent</h3>
 <p>The extent of the data range, i. e. minimum and maximum value in the given column of the CSV data file.</p></div>
     </div>
   </div>
