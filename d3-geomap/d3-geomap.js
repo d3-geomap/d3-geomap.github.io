@@ -1,4 +1,4 @@
-// https://d3-geomap.github.io v3.0.0 Copyright 2019 Ramiro Gómez
+// https://d3-geomap.github.io v3.1.0 Copyright 2019 Ramiro Gómez
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3-selection'), require('d3-transition'), require('topojson'), require('d3-fetch'), require('d3-geo'), require('d3-array'), require('d3-scale'), require('d3-format')) :
 typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-transition', 'topojson', 'd3-fetch', 'd3-geo', 'd3-array', 'd3-scale', 'd3-format'], factory) :
@@ -198,7 +198,7 @@ function () {
       self.data = selection.datum();
       if (!self.properties.width) self.properties.width = selection.node().getBoundingClientRect().width;
       if (!self.properties.height) self.properties.height = self.properties.width / 1.92;
-      if (!self.properties.scale) self.properties.scale = self.properties.width / 5.8;
+      if (!self.properties.scale) self.properties.scale = self.properties.width / 5.4;
       if (!self.properties.translate) self.properties.translate = [self.properties.width / 2, self.properties.height / 2];
       self.svg = selection.append('svg').attr('width', self.properties.width).attr('height', self.properties.height);
       self.svg.append('rect').attr('class', 'background').attr('width', self.properties.width).attr('height', self.properties.height).on('click', self.clicked.bind(self)); // Set map projection and path.
