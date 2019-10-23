@@ -1,4 +1,4 @@
-// https://d3-geomap.github.io v3.1.0 Copyright 2019 Ramiro Gómez
+// https://d3-geomap.github.io v3.2.0 Copyright 2019 Ramiro Gómez
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3-selection'), require('d3-transition'), require('topojson'), require('d3-fetch'), require('d3-geo'), require('d3-array'), require('d3-scale'), require('d3-format')) :
 typeof define === 'function' && define.amd ? define(['exports', 'd3-selection', 'd3-transition', 'topojson', 'd3-fetch', 'd3-geo', 'd3-array', 'd3-scale', 'd3-format'], factory) :
@@ -211,7 +211,7 @@ function () {
       var drawGeoData = function drawGeoData(geo) {
         self.geo = geo;
         self.svg.append('g').attr('class', 'units zoom').selectAll('path').data(topojson.feature(geo, geo.objects[self.properties.units]).features).enter().append('path').attr('class', function (d) {
-          return "unit ".concat(self.properties.unitPrefix).concat(d.properties[self.properties.unitId]);
+          return "unit ".concat(self.properties.unitPrefix).concat(d.properties[self.properties.unitId].replace(/\s/g, '_'));
         }).attr('d', self.path).on('click', self.clicked.bind(self)).append('title').text(self.properties.unitTitle);
         self.update();
       };
@@ -286,7 +286,7 @@ function (_Geomap) {
       self.svg.selectAll('path.unit').style('fill', null); // Add new fill styles based on data values.
 
       self.data.forEach(function (d) {
-        var uid = d[self.properties.unitId].toString().trim(),
+        var uid = d[self.properties.unitId].toString().trim().replace(/\s/g, '_'),
             val = d[self.properties.column].toString().trim(); // selectAll must be called and not just select, otherwise the data
         // attribute of the selected path object is overwritten with self.data.
 
