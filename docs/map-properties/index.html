@@ -90,7 +90,7 @@
     <div class="col-md-12">
         <h1>Map Properties - Accessors and Attributes</h1>
         <div><p>Maps can be customized through the accessors documented here. If an accessor is called with a value the value will be set and the map object returned. If called without an argument the current value of the corresponding property will be returned.</p>
-<p>In addition map properties can be accessed via attributes to allow for customizations beyond the capabilities of this library.</p>
+<p>In addition map properties can be accessed via attributes to allow for customizations beyond the capabilities of this library. The attributes are accessible once the map is rendered. You can make use of them in a function that you pass to the <code>postUpdate</code> accessor, when creating a map.</p>
 <h2>d3.geomap accessors</h2>
 <p>This section documents accessors that can/must be set when a <code>d3.geomap</code> object is created.</p>
 <h3>geofile - required if geoData is not set</h3>
@@ -124,6 +124,8 @@
 <h2>d3.geomap attributes</h2>
 <h3>geo</h3>
 <p>The loaded TopoJSON data, which gets assigned during the draw method.</p>
+<h3>path</h3>
+<p>A <a href="https://github.com/d3/d3-geo#geoPath">d3.geoPath</a> object in the projection of the created map.</p>
 <h3>svg</h3>
 <p>The <a href="https://github.com/d3/d3-selection">d3-selection</a> for the map object.</p>
 <h2>d3.choropleth accessors</h2>
