@@ -71,7 +71,6 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
@@ -89,9 +88,8 @@
 
     
 <div class="container">
-
-        <h1>Choropleth Map: World</h1>
-        <div><p>This example shows how to create a choropleth world map with <code>d3.choropleth</code>. It displays world population data downloaded from the <a href="https://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
+    <h1>Choropleth Map: World</h1>
+    <div><p>This example shows how to create a choropleth world map with <code>d3.choropleth</code>. It displays world population data downloaded from the <a href="https://data.worldbank.org/indicator/SP.POP.TOTL">World Bank databank</a>.</p>
 <p>You can set various properties of the map when instantiating a map object. First specify the TopoJSON file to load, then set the color scheme, choose the <code>YR2010</code> column as the one to display, set the format according to the <code>format</code> function defined first, display a legend, and set the unitId to <code>iso3</code>. Let's go into more details about the individual settings.</p>
 <p>We set a sequential multi-hue (Yellow - Green - Blue) color scale with 9 bins for the population data displayed. The value in the call to the <code>column</code> method specifies which column of the CSV file to display on the map based on the header row in the CSV. <code>d3.choropleth</code> requires this header row to be present.</p>
 <p>The <code>format</code> function defines how to format values in the map legend and in tooltips when moving the mouse over a country. The <code>legend</code> can currently be set to <code>true</code> and <code>false</code>. If <code>true</code> it will look like the one in the example. If you don't want to display a legend or prefer another type of legend you have to set <code>legend</code> to <code>false</code> and draw your own.</p>
@@ -116,20 +114,20 @@ d3.csv(&#39;/data/sp.pop.totl.csv&#39;).then(data =&gt; {
     map.draw(selection);
 });
 </code></pre></div>
-        <div id="map" class="d3-geomap"></div>
-        
-            <h3>Data</h3>
-            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3-geomap.</p>
-            <pre>﻿Series Code,iso3,YR2004,YR2005,YR2006,YR2007,YR2008,YR2009,YR2010,YR2011,YR2012,YR2013
+    <div id="map" class="d3-geomap"></div>
+    
+        <h3>Data</h3>
+        <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3-geomap.</p>
+        <pre>﻿Series Code,iso3,YR2004,YR2005,YR2006,YR2007,YR2008,YR2009,YR2010,YR2011,YR2012,YR2013
 SP.POP.TOTL,AFG,24018682,24860855,25631282,26349243,27032197,27708187,28397812,29105480,29824536,30551674
 SP.POP.TOTL,ALB,3014579,2992724,2968028,2940880,2912559,2884303,2856673,2829337,2801681,2773620
 SP.POP.TOTL,DZA,33461345,33960903,34507214,35097043,35725377,36383302,37062820,37762962,38481705,39208194
 SP.POP.TOTL,ASM,59262,59117,58652,57919,57053,56245,55636,55274,55128,55165
 SP.POP.TOTL,ADO,79060,81223,81877,81292,79969,78659,77907,77865,78360,79218
 ...</pre>
-        
-        <hr>
-        <h3>Example Maps</h3>
+    
+    <hr>
+    <h3>Example Maps</h3>
 <ul class="nav nav-pills nav-stacked">
     
         <li><a href="/map/choropleth/world/">Choropleth Map: World</a></li>
@@ -141,7 +139,6 @@ SP.POP.TOTL,ADO,79060,81223,81877,81292,79969,78659,77907,77865,78360,79218
         <li><a href="/map/choropleth/custom-domain/">Choropleth Map with Custom Data Domain</a></li>
     
 </ul>
-
 </div>
 
 
@@ -151,15 +148,14 @@ SP.POP.TOTL,ADO,79060,81223,81877,81292,79969,78659,77907,77865,78360,79218
         <p>© <script>document.write(new Date().getFullYear())</script> <a href="https://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
       </footer>
     </div>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/script.js"></script>
 
     
-<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
-<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="//unpkg.com/d3@7"></script>
+<script src="//unpkg.com/topojson@3"></script>
 <script src="/d3-geomap/d3-geomap.min.js"></script>
 
         

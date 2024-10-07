@@ -71,7 +71,6 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
@@ -89,11 +88,10 @@
 
     
 <div class="container">
-
-        <h1>d3-geomap - Create Geographic Maps for the Web</h1>
-        <div><p><strong>d3-geomap</strong> is a library for creating geographic maps that are rendered in a Web browser. d3-geomap is written in JavaScript using features introduced in EcmaScript 6 and later and built on top of D3.js.</p>
+    <h1>d3-geomap - Create Geographic Maps for the Web</h1>
+    <div><p><strong>d3-geomap</strong> is a library for creating geographic maps that are rendered in a Web browser. d3-geomap is written in JavaScript using features introduced in EcmaScript 6 and later and built on top of D3.js.</p>
 <h2>Quickstart</h2>
-<p>Set the charset of your document to <code>utf-8</code> right at the beginning of the HTML head section, then include the downloaded dependencies, and in the body create a <code>div</code> with the id <code>map</code>. Setting the charset to <code>utf-8</code> must be done to ensure that the referenced dependencies and data files don't cause encoding issues in the browser. In the other examples on this site inclusion of this code is assumed and not repeated on every page.</p>
+<p>Set the charset of your document to <code>utf-8</code> right at the beginning of the HTML head section, include the dependencies, and in the body create a <code>div</code> with the id <code>map</code>. Setting the charset to <code>utf-8</code> must be done to ensure that the referenced dependencies and data files don't cause encoding issues in the browser. In the other examples on this site inclusion of this code is assumed and not repeated on every page.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&#34;utf-8&#34;&gt;
@@ -114,10 +112,10 @@
     .draw(d3.select(&#39;#map&#39;));
 </code></pre>
 <p>Either add the above code between <code>script</code> tags after including the dependencies or put it in an external JavaScript file (recommended) and include that. See the map created with this code rendered below. Click on a country to zoom the map.</p></div>
-        <div id="map" class="d3-geomap"></div>
-        
-        <hr>
-        <h3>Example Maps</h3>
+    <div id="map" class="d3-geomap"></div>
+    
+    <hr>
+    <h3>Example Maps</h3>
 <ul class="nav nav-pills nav-stacked">
     
         <li><a href="/map/choropleth/world/">Choropleth Map: World</a></li>
@@ -129,7 +127,6 @@
         <li><a href="/map/choropleth/custom-domain/">Choropleth Map with Custom Data Domain</a></li>
     
 </ul>
-
 </div>
 
 
@@ -139,15 +136,14 @@
         <p>© <script>document.write(new Date().getFullYear())</script> <a href="https://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
       </footer>
     </div>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/script.js"></script>
 
     
-<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
-<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="//unpkg.com/d3@7"></script>
+<script src="//unpkg.com/topojson@3"></script>
 <script src="/d3-geomap/d3-geomap.min.js"></script>
 
         

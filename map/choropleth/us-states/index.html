@@ -71,7 +71,6 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
 <li id="sharemenu" class="dropdown">
-  <span class="navbar-btn"><a href="/download/d3-geomap.zip" class="btn btn-success"><i class="fa fa-download"></i> Download</a></span>
   <button type="button" class="dropdown-toggle btn btn-success navbar-btn" data-toggle="dropdown"><i class="fa fa-plus"></i></button>
   <ul class="share dropdown-menu pull-right">
     <li><a href="/rss.xml" class="btn btn-default"><i class="fa fa-rss"></i> RSS Feed</a></li>
@@ -89,9 +88,8 @@
 
     
 <div class="container">
-
-        <h1>Choropleth Map: US States</h1>
-        <div><p>This example shows how to create a choropleth map of states in the US using data from the <a href="https://www.nsf.gov/statistics/seind14/index.cfm/state-data/download.htm">National Science Foundation</a> about venture capital spent in the US in 2012.</p>
+    <h1>Choropleth Map: US States</h1>
+    <div><p>This example shows how to create a choropleth map of states in the US using data from the <a href="https://www.nsf.gov/statistics/seind14/index.cfm/state-data/download.htm">National Science Foundation</a> about venture capital spent in the US in 2012.</p>
 <p>I'll only explain the differences to the example <a href="/map/choropleth/world/">choropleth map of the world</a>, where you can learn about the meaning of the other settings.</p>
 <p>Since this is a map of the US, we load the appropriate TopoJSON file and set the map object to use the <code>d3.geoAlbersUsa</code> projection. The <code>unitId</code> used in this TopoJSON source is the <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code">FIPS code</a>. Since we don't use the default projection (<code>d3.geoNaturalEarth</code>) we need to set the <code>scale</code> so the map fits well into the layout, in this case <code>1000</code> is a good value.</p>
 <p>The remaining code should be straight-forward, provided you read the explanation of the <a href="/map/choropleth/world/">choropleth world map example</a>.</p>
@@ -107,20 +105,20 @@ d3.csv(&#39;/data/venture-capital.csv&#39;).then(data =&gt; {
     map.draw(d3.select(&#39;#map&#39;).datum(data));
 });
 </code></pre></div>
-        <div id="map" class="d3-geomap"></div>
-        
-            <h3>Data</h3>
-            <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3-geomap.</p>
-            <pre>,State,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,fips
+    <div id="map" class="d3-geomap"></div>
+    
+        <h3>Data</h3>
+        <p>See an excerpt of the data used in this map below. Currently CSV is the only supported data format for creating choropleth maps with d3-geomap.</p>
+        <pre>,State,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,fips
 0,Alabama,0.77,0.59,2.3,0.67,0.46,0.23,0.27,0.13,0.12,0.19,0.14,0.26,0.0,0.02,0.13,US01
 1,Alaska,0.0,0.0,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,US02
 2,Arizona,1.51,2.14,0.21,1.16,1.11,0.39,0.51,0.06,1.1,0.78,0.8,0.44,0.34,0.89,0.83,US04
 3,Arkansas,0.11,0.39,9.15,0.15,0.13,0.01,0.04,1.39,0.42,0.0,0.0,0.0,0.05,0.0,0.05,US05
 4,California,7.14,19.14,32.61,12.46,6.87,5.86,5.95,6.52,6.99,7.88,7.51,5.06,5.95,7.92,7.08,US06
 ...</pre>
-        
-        <hr>
-        <h3>Example Maps</h3>
+    
+    <hr>
+    <h3>Example Maps</h3>
 <ul class="nav nav-pills nav-stacked">
     
         <li><a href="/map/choropleth/world/">Choropleth Map: World</a></li>
@@ -132,7 +130,6 @@ d3.csv(&#39;/data/venture-capital.csv&#39;).then(data =&gt; {
         <li><a href="/map/choropleth/custom-domain/">Choropleth Map with Custom Data Domain</a></li>
     
 </ul>
-
 </div>
 
 
@@ -142,15 +139,14 @@ d3.csv(&#39;/data/venture-capital.csv&#39;).then(data =&gt; {
         <p>© <script>document.write(new Date().getFullYear())</script> <a href="https://ramiro.org/">Ramiro Gómez</a> (<a href="https://twitter.com/yaph">@yaph</a>)</p>
       </footer>
     </div>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/script.js"></script>
 
     
-<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
-<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+<script src="//unpkg.com/d3@7"></script>
+<script src="//unpkg.com/topojson@3"></script>
 <script src="/d3-geomap/d3-geomap.min.js"></script>
 
         
